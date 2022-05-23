@@ -63,7 +63,7 @@
             this.grpAdd.Controls.Add(this.cmdAdd);
             this.grpAdd.Controls.Add(this.optAddStop);
             this.grpAdd.Controls.Add(this.optAddLine);
-            this.grpAdd.Location = new System.Drawing.Point(83, 107);
+            this.grpAdd.Location = new System.Drawing.Point(83, 94);
             this.grpAdd.Name = "grpAdd";
             this.grpAdd.Size = new System.Drawing.Size(278, 147);
             this.grpAdd.TabIndex = 1;
@@ -106,7 +106,7 @@
             this.grpDelete.Controls.Add(this.cmdDelete);
             this.grpDelete.Controls.Add(this.optDeleteStop);
             this.grpDelete.Controls.Add(this.optDeleteLine);
-            this.grpDelete.Location = new System.Drawing.Point(444, 107);
+            this.grpDelete.Location = new System.Drawing.Point(444, 94);
             this.grpDelete.Name = "grpDelete";
             this.grpDelete.Size = new System.Drawing.Size(278, 147);
             this.grpDelete.TabIndex = 2;
@@ -148,7 +148,7 @@
             // 
             this.grpPrint.Controls.Add(this.lstLine);
             this.grpPrint.Controls.Add(this.cmdPrint);
-            this.grpPrint.Location = new System.Drawing.Point(444, 291);
+            this.grpPrint.Location = new System.Drawing.Point(444, 278);
             this.grpPrint.Name = "grpPrint";
             this.grpPrint.Size = new System.Drawing.Size(278, 147);
             this.grpPrint.TabIndex = 3;
@@ -177,11 +177,11 @@
             this.cmdPrint.TabIndex = 0;
             this.cmdPrint.Text = "Afficher";
             this.cmdPrint.UseVisualStyleBackColor = true;
-            // 
+            //
             // grpModify
             // 
             this.grpModify.Controls.Add(this.cmdModify);
-            this.grpModify.Location = new System.Drawing.Point(83, 291);
+            this.grpModify.Location = new System.Drawing.Point(83, 278);
             this.grpModify.Name = "grpModify";
             this.grpModify.Size = new System.Drawing.Size(278, 147);
             this.grpModify.TabIndex = 4;
