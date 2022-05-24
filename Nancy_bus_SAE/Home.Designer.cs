@@ -78,6 +78,7 @@
             this.cmdAdd.TabIndex = 2;
             this.cmdAdd.Text = "Ajouter";
             this.cmdAdd.UseVisualStyleBackColor = true;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // optAddStop
             // 
@@ -89,6 +90,7 @@
             this.optAddStop.TabStop = true;
             this.optAddStop.Text = "Arrêt";
             this.optAddStop.UseVisualStyleBackColor = true;
+            this.optAddStop.Click += new System.EventHandler(this.optAddStop_Click);
             // 
             // optAddLine
             // 
@@ -100,6 +102,7 @@
             this.optAddLine.TabStop = true;
             this.optAddLine.Text = "Ligne";
             this.optAddLine.UseVisualStyleBackColor = true;
+            this.optAddLine.Click += new System.EventHandler(this.optAddLine_Click);
             // 
             // grpDelete
             // 
@@ -117,10 +120,11 @@
             // 
             this.cmdDelete.Location = new System.Drawing.Point(100, 96);
             this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(85, 30);
+            this.cmdDelete.Size = new System.Drawing.Size(92, 30);
             this.cmdDelete.TabIndex = 5;
             this.cmdDelete.Text = "Supprimer";
             this.cmdDelete.UseVisualStyleBackColor = true;
+            this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // optDeleteStop
             // 
@@ -132,6 +136,7 @@
             this.optDeleteStop.TabStop = true;
             this.optDeleteStop.Text = "Arrêt";
             this.optDeleteStop.UseVisualStyleBackColor = true;
+            this.optDeleteStop.Click += new System.EventHandler(this.optDeleteStop_Click);
             // 
             // optDeleteLine
             // 
@@ -143,6 +148,7 @@
             this.optDeleteLine.TabStop = true;
             this.optDeleteLine.Text = "Ligne";
             this.optDeleteLine.UseVisualStyleBackColor = true;
+            this.optDeleteLine.Click += new System.EventHandler(this.optDeleteLine_Click);
             // 
             // grpPrint
             // 
@@ -159,11 +165,6 @@
             // 
             this.lstLine.FormattingEnabled = true;
             this.lstLine.ItemHeight = 20;
-            this.lstLine.Items.AddRange(new object[] {
-            "Ligne 1",
-            "Ligne 2",
-            "Ligne 3",
-            "Ligne 4"});
             this.lstLine.Location = new System.Drawing.Point(120, 16);
             this.lstLine.Name = "lstLine";
             this.lstLine.Size = new System.Drawing.Size(152, 124);
@@ -177,7 +178,8 @@
             this.cmdPrint.TabIndex = 0;
             this.cmdPrint.Text = "Afficher";
             this.cmdPrint.UseVisualStyleBackColor = true;
-            //
+            this.cmdPrint.Click += new System.EventHandler(this.cmdPrint_Click);
+            // 
             // grpModify
             // 
             this.grpModify.Controls.Add(this.cmdModify);
@@ -196,6 +198,7 @@
             this.cmdModify.TabIndex = 0;
             this.cmdModify.Text = "Modifier";
             this.cmdModify.UseVisualStyleBackColor = true;
+            this.cmdModify.Click += new System.EventHandler(this.cmdModify_Click);
             // 
             // Home
             // 
@@ -210,6 +213,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.grpAdd.ResumeLayout(false);
             this.grpAdd.PerformLayout();
             this.grpDelete.ResumeLayout(false);

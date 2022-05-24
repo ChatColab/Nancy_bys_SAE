@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLine.Designer.cs">
+      <DependentUpon>AddLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modify.Designer.cs">
+      <DependentUpon>Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintLine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +78,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddLine.resx">
+      <DependentUpon>AddLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddStop.resx">
       <DependentUpon>AddStop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modify.resx">
+      <DependentUpon>Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintLine.resx">
       <DependentUpon>PrintLine.cs</DependentUpon>
@@ -96,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryDB\LibraryDB.csproj">
+      <Project>{ecf5ad17-668f-4f0e-8698-995ef134ef84}</Project>
+      <Name>LibraryDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

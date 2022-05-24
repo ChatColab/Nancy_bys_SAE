@@ -43,16 +43,17 @@
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(72, 41);
+            this.lblLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLine.Location = new System.Drawing.Point(72, 31);
             this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(54, 20);
+            this.lblLine.Size = new System.Drawing.Size(99, 32);
             this.lblLine.TabIndex = 0;
             this.lblLine.Text = "lblLine";
             // 
             // lblStartStop
             // 
             this.lblStartStop.AutoSize = true;
-            this.lblStartStop.Location = new System.Drawing.Point(76, 84);
+            this.lblStartStop.Location = new System.Drawing.Point(64, 101);
             this.lblStartStop.Name = "lblStartStop";
             this.lblStartStop.Size = new System.Drawing.Size(119, 20);
             this.lblStartStop.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             this.lstStop.FormattingEnabled = true;
             this.lstStop.ItemHeight = 20;
-            this.lstStop.Location = new System.Drawing.Point(76, 126);
+            this.lstStop.Location = new System.Drawing.Point(64, 143);
             this.lstStop.Name = "lstStop";
             this.lstStop.Size = new System.Drawing.Size(120, 84);
             this.lstStop.TabIndex = 2;
@@ -70,7 +71,7 @@
             // lblNewStartHourly
             // 
             this.lblNewStartHourly.AutoSize = true;
-            this.lblNewStartHourly.Location = new System.Drawing.Point(76, 262);
+            this.lblNewStartHourly.Location = new System.Drawing.Point(36, 276);
             this.lblNewStartHourly.Name = "lblNewStartHourly";
             this.lblNewStartHourly.Size = new System.Drawing.Size(185, 20);
             this.lblNewStartHourly.TabIndex = 3;
@@ -78,7 +79,7 @@
             // 
             // cmdStartHourly
             // 
-            this.cmdStartHourly.Location = new System.Drawing.Point(76, 320);
+            this.cmdStartHourly.Location = new System.Drawing.Point(36, 320);
             this.cmdStartHourly.Name = "cmdStartHourly";
             this.cmdStartHourly.Size = new System.Drawing.Size(185, 37);
             this.cmdStartHourly.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             // cmdAdd
             // 
-            this.cmdAdd.Location = new System.Drawing.Point(76, 383);
+            this.cmdAdd.Location = new System.Drawing.Point(36, 383);
             this.cmdAdd.Name = "cmdAdd";
             this.cmdAdd.Size = new System.Drawing.Size(185, 37);
             this.cmdAdd.TabIndex = 5;
@@ -97,7 +98,7 @@
             // lblStartHourly
             // 
             this.lblStartHourly.AutoSize = true;
-            this.lblStartHourly.Location = new System.Drawing.Point(539, 41);
+            this.lblStartHourly.Location = new System.Drawing.Point(286, 41);
             this.lblStartHourly.Name = "lblStartHourly";
             this.lblStartHourly.Size = new System.Drawing.Size(136, 20);
             this.lblStartHourly.TabIndex = 6;
@@ -107,14 +108,14 @@
             // 
             this.lstHourly.FormattingEnabled = true;
             this.lstHourly.ItemHeight = 20;
-            this.lstHourly.Location = new System.Drawing.Point(543, 104);
+            this.lstHourly.Location = new System.Drawing.Point(290, 104);
             this.lstHourly.Name = "lstHourly";
-            this.lstHourly.Size = new System.Drawing.Size(120, 84);
+            this.lstHourly.Size = new System.Drawing.Size(185, 204);
             this.lstHourly.TabIndex = 7;
             // 
             // cmdValidate
             // 
-            this.cmdValidate.Location = new System.Drawing.Point(543, 320);
+            this.cmdValidate.Location = new System.Drawing.Point(290, 320);
             this.cmdValidate.Name = "cmdValidate";
             this.cmdValidate.Size = new System.Drawing.Size(185, 37);
             this.cmdValidate.TabIndex = 8;
@@ -123,7 +124,7 @@
             // 
             // cmdQuit
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(543, 383);
+            this.cmdQuit.Location = new System.Drawing.Point(290, 383);
             this.cmdQuit.Name = "cmdQuit";
             this.cmdQuit.Size = new System.Drawing.Size(185, 37);
             this.cmdQuit.TabIndex = 9;
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(523, 450);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdValidate);
             this.Controls.Add(this.lstHourly);

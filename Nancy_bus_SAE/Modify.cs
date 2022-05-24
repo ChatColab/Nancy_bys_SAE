@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Nancy_bus_SAE
 {
-    public partial class PrintLine : Form
+    public partial class Modify : Form
     {
-        public PrintLine(int nLine) //on va appeler ce form avec le numéro de ligne
+        public Modify()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
