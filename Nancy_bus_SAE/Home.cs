@@ -30,7 +30,7 @@ namespace Nancy_bus_SAE
             fill = BD.getNomLigne();
             foreach (String s in fill)
             {
-                lstLine.Items.Add(s);
+                lstLine.Items.Add("Ligne " + s);
             }
         }
 
@@ -102,6 +102,9 @@ namespace Nancy_bus_SAE
         private void cmdPrint_Click(object sender, EventArgs e)
         {
             //appeler le form avec le numéro de ligne correspondant (requête sql)
+            this.Hide();
+            PrintLine print = new PrintLine(BD.getNumLigne(lstLine.SelectedItem.ToString()));
+            print.ShowDialog();
         }
     }
 }

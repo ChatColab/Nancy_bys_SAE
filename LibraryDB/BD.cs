@@ -36,7 +36,7 @@ namespace LibraryDB
         /// sous-programme qui renvoie dans une liste de chaine de caractères le nom de toute les lignes
         /// </summary>
         /// <returns>une liste de chaine de caractéres représentant le nom des lignes de bus</returns>
-        public static List<String> getNomLigne()
+        public static List<String> getNomLigne() //retourne le nom de toutes les lignes
         {
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
@@ -48,6 +48,55 @@ namespace LibraryDB
             {
                 test.Add(Convert.ToString(dr["nomLigne"]));
             }
+            dr.Close();
+            return test;
+        }
+
+        public static String getNomLigne(int id) //retourne le nom de la ligne correspondant au numéro
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            String res = "null";
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select nomLigne from Ligne where nLigne={id}";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                res = Convert.ToString(dr["nomLigne"]);
+            }
+            dr.Close();
+            return res;
+        }
+
+        public static int getNumLigne(String nomLigne) //retourne le numéro de la ligne dont le nom est nomLigne
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            int res = -1;
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select nLigne from Ligne where nomLigne = {nomLigne}";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                res = Convert.ToInt32(dr["nLigne"]);
+            }
+            dr.Close();
+            return res;
+        }
+
+        public static List<String> getHeureDepLigne(int id)
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select horaireDepart from HoraireDepart where nLigne = {id}";
+            dr = cmd.ExecuteReader();
+            List<String> test = new List<String>();
+            while (dr.Read())
+            {
+                test.Add(Convert.ToString(dr["horaireDepart"]));
+            }
+            dr.Close();
             return test;
         }
 
