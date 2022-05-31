@@ -16,11 +16,21 @@ namespace Nancy_bus_SAE
         public PrintLine(int nLine) //on va appeler ce form avec le numéro de ligne
         {
             InitializeComponent();
+
+            lblLine.Text = "Ligne " + BD.getNomLigne(nLine);
+            
             List<String> fill;
             fill = BD.getHeureDepLigne(nLine);
             foreach (String s in fill)
             {
                 lstHourly.Items.Add(s);
+            }
+
+            List<String> fill2;
+            fill2 = BD.getArretInterLigne(nLine);
+            foreach (String s in fill2)
+            {
+                lstStop.Items.Add(s);
             }
         }
     }

@@ -16,7 +16,7 @@ namespace Nancy_bus_SAE
         public AddLine()
         {
             InitializeComponent();
-            lblLine.Text = "Ligne " + (BD.getNbLigne() + 1).ToString();
+            lblLine.Text = "Ligne " + ((Convert.ToInt32(BD.getNomLigne(BD.getNbLigne())))+1).ToString();
         }
     }
 }

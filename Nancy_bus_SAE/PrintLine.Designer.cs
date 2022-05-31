@@ -32,12 +32,13 @@
             this.lblHourly = new System.Windows.Forms.Label();
             this.lstStop = new System.Windows.Forms.ListBox();
             this.lstHourly = new System.Windows.Forms.ListBox();
+            this.lblLine = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblStop
             // 
             this.lblStop.AutoSize = true;
-            this.lblStop.Location = new System.Drawing.Point(60, 62);
+            this.lblStop.Location = new System.Drawing.Point(60, 75);
             this.lblStop.Name = "lblStop";
             this.lblStop.Size = new System.Drawing.Size(146, 20);
             this.lblStop.TabIndex = 0;
@@ -46,7 +47,7 @@
             // lblHourly
             // 
             this.lblHourly.AutoSize = true;
-            this.lblHourly.Location = new System.Drawing.Point(310, 62);
+            this.lblHourly.Location = new System.Drawing.Point(310, 75);
             this.lblHourly.Name = "lblHourly";
             this.lblHourly.Size = new System.Drawing.Size(144, 20);
             this.lblHourly.TabIndex = 1;
@@ -70,11 +71,21 @@
             this.lstHourly.Size = new System.Drawing.Size(173, 304);
             this.lstHourly.TabIndex = 3;
             // 
+            // lblLine
+            // 
+            this.lblLine.AutoSize = true;
+            this.lblLine.Location = new System.Drawing.Point(230, 23);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(51, 20);
+            this.lblLine.TabIndex = 4;
+            this.lblLine.Text = "label1";
+            // 
             // PrintLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 450);
+            this.Controls.Add(this.lblLine);
             this.Controls.Add(this.lstHourly);
             this.Controls.Add(this.lstStop);
             this.Controls.Add(this.lblHourly);
@@ -92,5 +103,6 @@
         private System.Windows.Forms.Label lblHourly;
         private System.Windows.Forms.ListBox lstStop;
         private System.Windows.Forms.ListBox lstHourly;
+        private System.Windows.Forms.Label lblLine;
     }
 }
