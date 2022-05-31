@@ -103,7 +103,9 @@ namespace Nancy_bus_SAE
         {
             //appeler le form avec le numéro de ligne correspondant (requête sql)
             this.Hide();
-            PrintLine print = new PrintLine(BD.getNumLigne(lstLine.SelectedItem.ToString()));
+            string ligne = lstLine.SelectedItem.ToString();
+            
+            PrintLine print = new PrintLine(BD.getNumLigne(ligne.Substring(6)));
             print.ShowDialog();
         }
     }

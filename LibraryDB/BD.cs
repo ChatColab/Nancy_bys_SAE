@@ -68,13 +68,13 @@ namespace LibraryDB
             return res;
         }
 
-        public static int getNumLigne(String nomLigne) //retourne le numéro de la ligne dont le nom est nomLigne
+        public static int getNumLigne(string nomLigne) //retourne le numéro de la ligne dont le nom est nomLigne
         {
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
             int res = -1;
             cmd.Connection = cnx;
-            cmd.CommandText = $"select nLigne from Ligne where nomLigne = {nomLigne}";
+            cmd.CommandText = $"select nLigne from Ligne where nomLigne = '{nomLigne}'";
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -98,6 +98,22 @@ namespace LibraryDB
             }
             dr.Close();
             return test;
+        }
+
+        public static int getNbLigne()
+        {
+            int res = -1;
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = "select count(*) from Ligne";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                res = Convert.ToInt32(dr[0]);
+            }
+            dr.Close();
+            return res;
         }
 
         public static void closeConnexion()

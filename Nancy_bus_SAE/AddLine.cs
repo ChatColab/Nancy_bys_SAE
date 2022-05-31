@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryDB;
 
 namespace Nancy_bus_SAE
 {
@@ -15,6 +16,7 @@ namespace Nancy_bus_SAE
         public AddLine()
         {
             InitializeComponent();
+            lblLine.Text = "Ligne " + (BD.getNbLigne() + 1).ToString();
         }
     }
 }
