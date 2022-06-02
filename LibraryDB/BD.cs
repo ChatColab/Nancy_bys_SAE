@@ -124,9 +124,13 @@ namespace LibraryDB
             cmd.Connection = cnx;
             cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret, intervalleTemps from TempsTrajet, Arret as Arret1, Arret as Arret2, Trajet where TempsTrajet.nArretA = Arret1.nArret and TempsTrajet.nArretB = Arret2.nArret and Trajet.nArretA = Arret1.nArret and Trajet.nArretB = Arret2.nArret and nLigne = {nLine};";
             dr = cmd.ExecuteReader();
-            while (dr.Read())
+            while (dr.HasRows)
             {
-                res.Add(Convert.ToString(dr["nomArret"]));
+                while (dr.Read())
+                {
+                    res.Add(Convert.ToString(dr.GetString(0)) + "\t" + Convert.ToString(dr.GetString(1)) + "\t" + Convert.ToString(dr.GetInt32(2)));
+                }
+                dr.NextResult();
             }
             dr.Close();
             return res;

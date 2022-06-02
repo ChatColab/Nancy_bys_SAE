@@ -57,18 +57,18 @@
             // 
             this.lstStop.FormattingEnabled = true;
             this.lstStop.ItemHeight = 20;
-            this.lstStop.Location = new System.Drawing.Point(48, 121);
+            this.lstStop.Location = new System.Drawing.Point(26, 121);
             this.lstStop.Name = "lstStop";
-            this.lstStop.Size = new System.Drawing.Size(173, 304);
+            this.lstStop.Size = new System.Drawing.Size(398, 304);
             this.lstStop.TabIndex = 2;
             // 
             // lstHourly
             // 
             this.lstHourly.FormattingEnabled = true;
             this.lstHourly.ItemHeight = 20;
-            this.lstHourly.Location = new System.Drawing.Point(298, 121);
+            this.lstHourly.Location = new System.Drawing.Point(558, 121);
             this.lstHourly.Name = "lstHourly";
-            this.lstHourly.Size = new System.Drawing.Size(173, 304);
+            this.lstHourly.Size = new System.Drawing.Size(176, 304);
             this.lstHourly.TabIndex = 3;
             // 
             // lblLine
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 450);
+            this.ClientSize = new System.Drawing.Size(758, 518);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.lstHourly);
             this.Controls.Add(this.lstStop);
