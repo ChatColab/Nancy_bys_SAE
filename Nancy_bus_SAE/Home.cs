@@ -20,18 +20,20 @@ namespace Nancy_bus_SAE
 
         private void Home_Load(object sender, EventArgs e)
         {
+            BD.initConnexion();
+
             optAddLine.Checked = true;
             optAddStop.Checked = false;
             optDeleteLine.Checked = true;
             optDeleteStop.Checked = false;
-
+            
             List<String> fill;
-            BD.initConnexion();
             fill = BD.getNomLigne();
             foreach (String s in fill)
             {
                 lstLine.Items.Add("Ligne " + s);
             }
+            
         }
 
         private void optAddStop_Click(object sender, EventArgs e)

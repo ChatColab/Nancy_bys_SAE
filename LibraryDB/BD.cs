@@ -42,7 +42,7 @@ namespace LibraryDB
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
             cmd.CommandText = "select nomLigne from Ligne";
-            dr = cmd.ExecuteReader(); 
+            dr = cmd.ExecuteReader();
             List<String> test = new List<String>();
             while (dr.Read())
             {
@@ -116,23 +116,33 @@ namespace LibraryDB
             return res;
         }
 
-        public static List<String> getArretInterLigne(int nLine)
+        public static List<List<string>> getArretInterLigne(int nLine)
         {
-            List<String> res = new List<String>();
+            List<List<string>> res = new List<List<string>>();
+            List<string> temp = new List<string>();
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
             cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret, intervalleTemps from TempsTrajet, Arret as Arret1, Arret as Arret2, Trajet where TempsTrajet.nArretA = Arret1.nArret and TempsTrajet.nArretB = Arret2.nArret and Trajet.nArretA = Arret1.nArret and Trajet.nArretB = Arret2.nArret and nLigne = {nLine};";
             dr = cmd.ExecuteReader();
-            while (dr.HasRows)
-            {
                 while (dr.Read())
                 {
-                    res.Add(Convert.ToString(dr.GetString(0)) + "\t" + Convert.ToString(dr.GetString(1)) + "\t" + Convert.ToString(dr.GetInt32(2)));
+                //Console.WriteLine(dr.GetString(0) + " " + dr.GetString(1) + " " + dr.GetInt32(2));
+                temp.Add(dr.GetString(0));
+                    temp.Add(dr.GetString(1));
+                    temp.Add(Convert.ToString(dr.GetInt32(2)));
+                    res.Add(temp);
+                Console.WriteLine(res[0][0] + " " + res[0][1] + " " + res[0][2]);
+                    temp.Clear();
                 }
-                dr.NextResult();
-            }
             dr.Close();
+            Console.WriteLine(res.Count);
+            Console.WriteLine(res[0][0]);
+            Console.WriteLine(res[0][1]);
+            Console.WriteLine(res[0][2]);
+            Console.WriteLine(res[5][0]);
+            Console.WriteLine(res[5][1]);
+            Console.WriteLine(res[5][2]);
             return res;
         }
 

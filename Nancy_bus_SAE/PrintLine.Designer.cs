@@ -30,9 +30,9 @@
         {
             this.lblStop = new System.Windows.Forms.Label();
             this.lblHourly = new System.Windows.Forms.Label();
-            this.lstStop = new System.Windows.Forms.ListBox();
             this.lstHourly = new System.Windows.Forms.ListBox();
             this.lblLine = new System.Windows.Forms.Label();
+            this.lstStop = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // lblStop
@@ -53,15 +53,6 @@
             this.lblHourly.TabIndex = 1;
             this.lblHourly.Text = "Horaires de Départ";
             // 
-            // lstStop
-            // 
-            this.lstStop.FormattingEnabled = true;
-            this.lstStop.ItemHeight = 20;
-            this.lstStop.Location = new System.Drawing.Point(26, 121);
-            this.lstStop.Name = "lstStop";
-            this.lstStop.Size = new System.Drawing.Size(398, 304);
-            this.lstStop.TabIndex = 2;
-            // 
             // lstHourly
             // 
             this.lstHourly.FormattingEnabled = true;
@@ -80,14 +71,23 @@
             this.lblLine.TabIndex = 4;
             this.lblLine.Text = "label1";
             // 
+            // lstStop
+            // 
+            this.lstStop.HideSelection = false;
+            this.lstStop.Location = new System.Drawing.Point(64, 151);
+            this.lstStop.Name = "lstStop";
+            this.lstStop.Size = new System.Drawing.Size(375, 274);
+            this.lstStop.TabIndex = 5;
+            this.lstStop.UseCompatibleStateImageBehavior = false;
+            // 
             // PrintLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 518);
+            this.Controls.Add(this.lstStop);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.lstHourly);
-            this.Controls.Add(this.lstStop);
             this.Controls.Add(this.lblHourly);
             this.Controls.Add(this.lblStop);
             this.Name = "PrintLine";
@@ -101,8 +101,8 @@
 
         private System.Windows.Forms.Label lblStop;
         private System.Windows.Forms.Label lblHourly;
-        private System.Windows.Forms.ListBox lstStop;
         private System.Windows.Forms.ListBox lstHourly;
         private System.Windows.Forms.Label lblLine;
+        private System.Windows.Forms.ListView lstStop;
     }
 }
