@@ -132,7 +132,6 @@ namespace LibraryDB
                     temp.Add(dr.GetString(1));
                     temp.Add(Convert.ToString(dr.GetInt32(2)));
                     res.Add(temp);
-                Console.WriteLine(res[0][0] + " " + res[0][1] + " " + res[0][2]);
                 temp = new List<string>();
             }
             dr.Close();
