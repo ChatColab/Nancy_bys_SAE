@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFirstStopInput = new System.Windows.Forms.Label();
             this.lblNextStopInput = new System.Windows.Forms.Label();
-            this.dudFirstStopInput = new System.Windows.Forms.DomainUpDown();
-            this.dudNextStopInput = new System.Windows.Forms.DomainUpDown();
             this.cmdValidate = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
             this.lblModifyStop = new System.Windows.Forms.Label();
@@ -42,6 +40,8 @@
             this.lblNextStop = new System.Windows.Forms.Label();
             this.lblArrow = new System.Windows.Forms.Label();
             this.cmdSave = new System.Windows.Forms.Button();
+            this.cboFirstStopInput = new System.Windows.Forms.ComboBox();
+            this.cboNextStopInput = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudNewValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,22 +71,6 @@
             this.lblNextStopInput.Size = new System.Drawing.Size(147, 20);
             this.lblNextStopInput.TabIndex = 2;
             this.lblNextStopInput.Text = "Saisir l\'Arrêt suivant";
-            // 
-            // dudFirstStopInput
-            // 
-            this.dudFirstStopInput.Location = new System.Drawing.Point(47, 117);
-            this.dudFirstStopInput.Name = "dudFirstStopInput";
-            this.dudFirstStopInput.Size = new System.Drawing.Size(156, 26);
-            this.dudFirstStopInput.TabIndex = 3;
-            this.dudFirstStopInput.Text = "domainUpDown1";
-            // 
-            // dudNextStopInput
-            // 
-            this.dudNextStopInput.Location = new System.Drawing.Point(47, 269);
-            this.dudNextStopInput.Name = "dudNextStopInput";
-            this.dudNextStopInput.Size = new System.Drawing.Size(156, 26);
-            this.dudNextStopInput.TabIndex = 4;
-            this.dudNextStopInput.Text = "domainUpDown1";
             // 
             // cmdValidate
             // 
@@ -167,11 +151,29 @@
             this.cmdSave.Text = "Valider et Enregistrer";
             this.cmdSave.UseVisualStyleBackColor = true;
             // 
+            // cboFirstStopInput
+            // 
+            this.cboFirstStopInput.FormattingEnabled = true;
+            this.cboFirstStopInput.Location = new System.Drawing.Point(47, 117);
+            this.cboFirstStopInput.Name = "cboFirstStopInput";
+            this.cboFirstStopInput.Size = new System.Drawing.Size(156, 28);
+            this.cboFirstStopInput.TabIndex = 14;
+            // 
+            // cboNextStopInput
+            // 
+            this.cboNextStopInput.FormattingEnabled = true;
+            this.cboNextStopInput.Location = new System.Drawing.Point(47, 257);
+            this.cboNextStopInput.Name = "cboNextStopInput";
+            this.cboNextStopInput.Size = new System.Drawing.Size(156, 28);
+            this.cboNextStopInput.TabIndex = 15;
+            // 
             // Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboNextStopInput);
+            this.Controls.Add(this.cboFirstStopInput);
             this.Controls.Add(this.cmdSave);
             this.Controls.Add(this.lblArrow);
             this.Controls.Add(this.lblNextStop);
@@ -181,8 +183,6 @@
             this.Controls.Add(this.lblModifyStop);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdValidate);
-            this.Controls.Add(this.dudNextStopInput);
-            this.Controls.Add(this.dudFirstStopInput);
             this.Controls.Add(this.lblNextStopInput);
             this.Controls.Add(this.lblFirstStopInput);
             this.Controls.Add(this.label1);
@@ -199,8 +199,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFirstStopInput;
         private System.Windows.Forms.Label lblNextStopInput;
-        private System.Windows.Forms.DomainUpDown dudFirstStopInput;
-        private System.Windows.Forms.DomainUpDown dudNextStopInput;
         private System.Windows.Forms.Button cmdValidate;
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.Label lblModifyStop;
@@ -210,5 +208,7 @@
         private System.Windows.Forms.Label lblNextStop;
         private System.Windows.Forms.Label lblArrow;
         private System.Windows.Forms.Button cmdSave;
+        private System.Windows.Forms.ComboBox cboFirstStopInput;
+        private System.Windows.Forms.ComboBox cboNextStopInput;
     }
 }

@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dudLine = new System.Windows.Forms.DomainUpDown();
-            this.dudStop = new System.Windows.Forms.DomainUpDown();
-            this.dudPrevStop = new System.Windows.Forms.DomainUpDown();
-            this.dudNextStop = new System.Windows.Forms.DomainUpDown();
             this.grpNewStop = new System.Windows.Forms.GroupBox();
+            this.lblNewStop = new System.Windows.Forms.Label();
             this.txtNewStop = new System.Windows.Forms.TextBox();
             this.grpTime = new System.Windows.Forms.GroupBox();
             this.nudNextStop = new System.Windows.Forms.NumericUpDown();
@@ -42,44 +39,15 @@
             this.lblPrevStop = new System.Windows.Forms.Label();
             this.cmdAdd = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
-            this.lblNewStop = new System.Windows.Forms.Label();
+            this.cboPrevStop = new System.Windows.Forms.ComboBox();
+            this.cboNextStop = new System.Windows.Forms.ComboBox();
+            this.cboStop = new System.Windows.Forms.ComboBox();
+            this.cboLine = new System.Windows.Forms.ComboBox();
             this.grpNewStop.SuspendLayout();
             this.grpTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNextStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrevStop)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dudLine
-            // 
-            this.dudLine.Location = new System.Drawing.Point(84, 31);
-            this.dudLine.Name = "dudLine";
-            this.dudLine.Size = new System.Drawing.Size(224, 26);
-            this.dudLine.TabIndex = 0;
-            this.dudLine.Text = "dudLine";
-            // 
-            // dudStop
-            // 
-            this.dudStop.Location = new System.Drawing.Point(116, 96);
-            this.dudStop.Name = "dudStop";
-            this.dudStop.Size = new System.Drawing.Size(149, 26);
-            this.dudStop.TabIndex = 1;
-            this.dudStop.Text = "dudStop";
-            // 
-            // dudPrevStop
-            // 
-            this.dudPrevStop.Location = new System.Drawing.Point(116, 210);
-            this.dudPrevStop.Name = "dudPrevStop";
-            this.dudPrevStop.Size = new System.Drawing.Size(149, 26);
-            this.dudPrevStop.TabIndex = 2;
-            this.dudPrevStop.Text = "dudPrevStop";
-            // 
-            // dudNextStop
-            // 
-            this.dudNextStop.Location = new System.Drawing.Point(116, 252);
-            this.dudNextStop.Name = "dudNextStop";
-            this.dudNextStop.Size = new System.Drawing.Size(149, 26);
-            this.dudNextStop.TabIndex = 3;
-            this.dudNextStop.Text = "dudNextStop";
             // 
             // grpNewStop
             // 
@@ -91,6 +59,15 @@
             this.grpNewStop.TabIndex = 4;
             this.grpNewStop.TabStop = false;
             this.grpNewStop.Text = "Création d\'un nouvel arrêt";
+            // 
+            // lblNewStop
+            // 
+            this.lblNewStop.AutoSize = true;
+            this.lblNewStop.Location = new System.Drawing.Point(95, 41);
+            this.lblNewStop.Name = "lblNewStop";
+            this.lblNewStop.Size = new System.Drawing.Size(151, 20);
+            this.lblNewStop.TabIndex = 1;
+            this.lblNewStop.Text = "Nom du nouvel arrêt";
             // 
             // txtNewStop
             // 
@@ -162,28 +139,51 @@
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
             // 
-            // lblNewStop
+            // cboPrevStop
             // 
-            this.lblNewStop.AutoSize = true;
-            this.lblNewStop.Location = new System.Drawing.Point(95, 41);
-            this.lblNewStop.Name = "lblNewStop";
-            this.lblNewStop.Size = new System.Drawing.Size(151, 20);
-            this.lblNewStop.TabIndex = 1;
-            this.lblNewStop.Text = "Nom du nouvel arrêt";
+            this.cboPrevStop.FormattingEnabled = true;
+            this.cboPrevStop.Location = new System.Drawing.Point(116, 208);
+            this.cboPrevStop.Name = "cboPrevStop";
+            this.cboPrevStop.Size = new System.Drawing.Size(149, 28);
+            this.cboPrevStop.TabIndex = 8;
+            // 
+            // cboNextStop
+            // 
+            this.cboNextStop.FormattingEnabled = true;
+            this.cboNextStop.Location = new System.Drawing.Point(116, 252);
+            this.cboNextStop.Name = "cboNextStop";
+            this.cboNextStop.Size = new System.Drawing.Size(149, 28);
+            this.cboNextStop.TabIndex = 9;
+            // 
+            // cboStop
+            // 
+            this.cboStop.FormattingEnabled = true;
+            this.cboStop.Location = new System.Drawing.Point(116, 96);
+            this.cboStop.Name = "cboStop";
+            this.cboStop.Size = new System.Drawing.Size(149, 28);
+            this.cboStop.TabIndex = 10;
+            // 
+            // cboLine
+            // 
+            this.cboLine.FormattingEnabled = true;
+            this.cboLine.Location = new System.Drawing.Point(84, 31);
+            this.cboLine.Name = "cboLine";
+            this.cboLine.Size = new System.Drawing.Size(224, 28);
+            this.cboLine.TabIndex = 11;
             // 
             // AddStop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboLine);
+            this.Controls.Add(this.cboStop);
+            this.Controls.Add(this.cboNextStop);
+            this.Controls.Add(this.cboPrevStop);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdAdd);
             this.Controls.Add(this.grpTime);
             this.Controls.Add(this.grpNewStop);
-            this.Controls.Add(this.dudNextStop);
-            this.Controls.Add(this.dudPrevStop);
-            this.Controls.Add(this.dudStop);
-            this.Controls.Add(this.dudLine);
             this.Name = "AddStop";
             this.Text = "Ajouter un Arrêt";
             this.grpNewStop.ResumeLayout(false);
@@ -199,10 +199,6 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DomainUpDown dudLine;
-        private System.Windows.Forms.DomainUpDown dudStop;
-        private System.Windows.Forms.DomainUpDown dudPrevStop;
-        private System.Windows.Forms.DomainUpDown dudNextStop;
         private System.Windows.Forms.GroupBox grpNewStop;
         private System.Windows.Forms.GroupBox grpTime;
         private System.Windows.Forms.TextBox txtNewStop;
@@ -213,5 +209,9 @@
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.Label lblNewStop;
+        private System.Windows.Forms.ComboBox cboPrevStop;
+        private System.Windows.Forms.ComboBox cboNextStop;
+        private System.Windows.Forms.ComboBox cboStop;
+        private System.Windows.Forms.ComboBox cboLine;
     }
 }

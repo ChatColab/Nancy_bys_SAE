@@ -61,6 +61,24 @@
     <Compile Include="AddStop.Designer.cs">
       <DependentUpon>AddStop.cs</DependentUpon>
     </Compile>
+    <Compile Include="DelLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelLine.Designer.cs">
+      <DependentUpon>DelLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelStop.Designer.cs">
+      <DependentUpon>DelStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelStopX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelStopX.Designer.cs">
+      <DependentUpon>DelStopX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStop.resx">
       <DependentUpon>AddStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelLine.resx">
+      <DependentUpon>DelLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelStop.resx">
+      <DependentUpon>DelStop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DelStopX.resx">
+      <DependentUpon>DelStopX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
