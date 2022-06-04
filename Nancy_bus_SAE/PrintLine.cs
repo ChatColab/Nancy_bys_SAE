@@ -31,19 +31,21 @@ namespace Nancy_bus_SAE
             List<List<string>> fill2 = new List<List<string>>();
             fill2 = BD.getArretInterLigne(nLine);
 
+            //permet de voir les colonnes
             lstStop.View = View.Details;
 
+            //création des colonnes
             lstStop.Columns.Add("Arrêt 1");
             lstStop.Columns.Add("Arrêt 2");
             lstStop.Columns.Add("Durée (en min)");
+            
+            //remplissage des colonnes
             foreach (List<string> s in fill2)
             {
                 var tmp = new ListViewItem(new[] { s[0], s[1], s[2] });
 
                 lstStop.Items.Add(tmp);
             }
-            
-            //lstStop.Items.AddRange(new ListViewItem[] { a1, a2, inter });
         }
     }
 }

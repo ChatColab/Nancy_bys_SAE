@@ -30,7 +30,6 @@
         {
             this.lblLine = new System.Windows.Forms.Label();
             this.lblStartStop = new System.Windows.Forms.Label();
-            this.lstStop = new System.Windows.Forms.ListBox();
             this.lblNewStartHourly = new System.Windows.Forms.Label();
             this.cmdStartHourly = new System.Windows.Forms.Button();
             this.cmdAdd = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@
             this.lstHourly = new System.Windows.Forms.ListBox();
             this.cmdValidate = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
+            this.cboStop = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblLine
@@ -58,15 +58,6 @@
             this.lblStartStop.Size = new System.Drawing.Size(119, 20);
             this.lblStartStop.TabIndex = 1;
             this.lblStartStop.Text = "Arrêt de Départ";
-            // 
-            // lstStop
-            // 
-            this.lstStop.FormattingEnabled = true;
-            this.lstStop.ItemHeight = 20;
-            this.lstStop.Location = new System.Drawing.Point(64, 143);
-            this.lstStop.Name = "lstStop";
-            this.lstStop.Size = new System.Drawing.Size(120, 84);
-            this.lstStop.TabIndex = 2;
             // 
             // lblNewStartHourly
             // 
@@ -131,11 +122,21 @@
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
             // 
+            // cboStop
+            // 
+            this.cboStop.FormattingEnabled = true;
+            this.cboStop.Location = new System.Drawing.Point(65, 132);
+            this.cboStop.Name = "cboStop";
+            this.cboStop.Size = new System.Drawing.Size(121, 28);
+            this.cboStop.TabIndex = 10;
+            this.cboStop.Text = "Arrêt X";
+            // 
             // AddLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.cboStop);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdValidate);
             this.Controls.Add(this.lstHourly);
@@ -143,7 +144,6 @@
             this.Controls.Add(this.cmdAdd);
             this.Controls.Add(this.cmdStartHourly);
             this.Controls.Add(this.lblNewStartHourly);
-            this.Controls.Add(this.lstStop);
             this.Controls.Add(this.lblStartStop);
             this.Controls.Add(this.lblLine);
             this.Name = "AddLine";
@@ -157,7 +157,6 @@
 
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Label lblStartStop;
-        private System.Windows.Forms.ListBox lstStop;
         private System.Windows.Forms.Label lblNewStartHourly;
         private System.Windows.Forms.Button cmdStartHourly;
         private System.Windows.Forms.Button cmdAdd;
@@ -165,5 +164,6 @@
         private System.Windows.Forms.ListBox lstHourly;
         private System.Windows.Forms.Button cmdValidate;
         private System.Windows.Forms.Button cmdQuit;
+        private System.Windows.Forms.ComboBox cboStop;
     }
 }

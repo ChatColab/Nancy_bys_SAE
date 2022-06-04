@@ -138,6 +138,7 @@
             this.cmdQuit.TabIndex = 7;
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
+            this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
             // 
             // cboPrevStop
             // 
@@ -146,6 +147,7 @@
             this.cboPrevStop.Name = "cboPrevStop";
             this.cboPrevStop.Size = new System.Drawing.Size(149, 28);
             this.cboPrevStop.TabIndex = 8;
+            this.cboPrevStop.Text = "Arrêt précédent";
             // 
             // cboNextStop
             // 
@@ -154,6 +156,7 @@
             this.cboNextStop.Name = "cboNextStop";
             this.cboNextStop.Size = new System.Drawing.Size(149, 28);
             this.cboNextStop.TabIndex = 9;
+            this.cboNextStop.Text = "Arrêt suivant";
             // 
             // cboStop
             // 
@@ -162,6 +165,8 @@
             this.cboStop.Name = "cboStop";
             this.cboStop.Size = new System.Drawing.Size(149, 28);
             this.cboStop.TabIndex = 10;
+            this.cboStop.Text = "Arrêt à ajouter";
+            this.cboStop.SelectedIndexChanged += new System.EventHandler(this.cboStop_SelectedIndexChanged);
             // 
             // cboLine
             // 
@@ -170,6 +175,8 @@
             this.cboLine.Name = "cboLine";
             this.cboLine.Size = new System.Drawing.Size(224, 28);
             this.cboLine.TabIndex = 11;
+            this.cboLine.Text = "Ligne X";
+            this.cboLine.SelectedIndexChanged += new System.EventHandler(this.cboLine_SelectedIndexChanged);
             // 
             // AddStop
             // 

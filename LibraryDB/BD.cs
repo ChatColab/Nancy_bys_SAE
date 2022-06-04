@@ -138,6 +138,42 @@ namespace LibraryDB
             return res;
         }
 
+        public static List<String> getNomArret()
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret from Arret as Arret1, Arret as Arret2, Trajet  where Arret1.nArret = Trajet.nArretA and Arret2.nArret = Trajet.nArretB;";
+            dr = cmd.ExecuteReader();
+            List<String> test = new List<String>();
+            while (dr.Read())
+            {
+                test.Add(dr.GetString(0));
+                test.Add(dr.GetString(1));
+            }
+            test = test.Distinct().ToList();
+            dr.Close();
+            return test;
+        }
+
+        public static List<String> getNomArret(string nomLigne)
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret from Arret as Arret1, Arret as Arret2, Trajet  where nLigne = {getNumLigne(nomLigne)} and Arret1.nArret = Trajet.nArretA and Arret2.nArret = Trajet.nArretB;";
+            dr = cmd.ExecuteReader();
+            List<String> test = new List<String>();
+            while (dr.Read())
+            {
+                test.Add(dr.GetString(0));
+                test.Add(dr.GetString(1));
+            }
+            test = test.Distinct().ToList();
+            dr.Close();
+            return test;
+        }
+
         public static void closeConnexion()
         {
             try
