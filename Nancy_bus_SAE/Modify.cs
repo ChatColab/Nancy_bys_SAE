@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryDB;
 
 namespace Nancy_bus_SAE
 {
@@ -15,6 +16,15 @@ namespace Nancy_bus_SAE
         public Modify()
         {
             InitializeComponent();
+
+            List<string> fill = new List<string>();
+            fill = BD.getNomArret();
+            foreach (string s in fill)
+            {
+                cboFirstStopInput.Items.Add(s);
+            }
+
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,6 +41,12 @@ namespace Nancy_bus_SAE
                 formToShow.Show();
             }
             this.Close();
+        }
+
+        private void cboFirstStopInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<string> fill2 = new List<string>();
+            //fill2 = BD.getNomArretLink(cboFirstStopInput.Text)
         }
     }
 }

@@ -46,6 +46,20 @@ namespace Nancy_bus_SAE
 
                 lstStop.Items.Add(tmp);
             }
+            //taille des colonnes
+            lstStop.Columns[0].Width = -1;
+            lstStop.Columns[1].Width = -1;
+        }
+
+        private void cmdQuit_Click(object sender, EventArgs e)
+        {
+            //unhide Home (pas copiloté, stackoverflow)
+            var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+            this.Close();
         }
     }
 }

@@ -35,5 +35,35 @@ namespace Nancy_bus_SAE
             }
             this.Close();
         }
+
+        private void txtStartHourly_TextChanged(object sender, EventArgs e)
+        {
+          if (txtStartHourly.Text != "Format Invalide")
+            {
+                //set default forecolor
+                txtStartHourly.ForeColor = Color.Grey;
+            }
+        }
+
+        private void cmdAdd_Click(object sender, EventArgs e)
+        {
+            /*
+            string txt = txtStartHourly.Text;
+            string pattern = @"\d\d:\d\d:\d\d";
+            Match m = Regex.Match(txt, pattern);
+            if (m.Success && Convert.ToInt32(txt.Substring())<24 && )
+            {
+
+                //requête sql
+            }
+            else
+            {
+                txtStartHourly.ForeColor = Color.Red;
+                txtStartHourly.Text = "Format Invalide";
+            }
+            */
+
+            //ok gaetour oublie le truc du haut on va remplacer la text box par deux numeric up down un pour les heures un pour les minutes et on fait en sorte que le premier dépasse pas 24 et l autre 60 comme ça on est tranquile et nique bien mais alors EXTREMEMENT fort l'entrée utilisateur c des gros chiens les utilisateurs
+        }
     }
 }

@@ -78,7 +78,7 @@
             // cmdValidate
             // 
             this.cmdValidate.Location = new System.Drawing.Point(29, 216);
-            this.cmdValidate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdValidate.Margin = new System.Windows.Forms.Padding(2);
             this.cmdValidate.Name = "cmdValidate";
             this.cmdValidate.Size = new System.Drawing.Size(107, 24);
             this.cmdValidate.TabIndex = 5;
@@ -88,7 +88,7 @@
             // cmdQuit
             // 
             this.cmdQuit.Location = new System.Drawing.Point(29, 255);
-            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2);
             this.cmdQuit.Name = "cmdQuit";
             this.cmdQuit.Size = new System.Drawing.Size(107, 24);
             this.cmdQuit.TabIndex = 6;
@@ -119,7 +119,7 @@
             // nudNewValue
             // 
             this.nudNewValue.Location = new System.Drawing.Point(230, 76);
-            this.nudNewValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudNewValue.Margin = new System.Windows.Forms.Padding(2);
             this.nudNewValue.Name = "nudNewValue";
             this.nudNewValue.Size = new System.Drawing.Size(80, 20);
             this.nudNewValue.TabIndex = 9;
@@ -157,7 +157,7 @@
             // cmdSave
             // 
             this.cmdSave.Location = new System.Drawing.Point(230, 216);
-            this.cmdSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdSave.Margin = new System.Windows.Forms.Padding(2);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(119, 24);
             this.cmdSave.TabIndex = 13;
@@ -168,16 +168,17 @@
             // 
             this.cboFirstStopInput.FormattingEnabled = true;
             this.cboFirstStopInput.Location = new System.Drawing.Point(31, 76);
-            this.cboFirstStopInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboFirstStopInput.Margin = new System.Windows.Forms.Padding(2);
             this.cboFirstStopInput.Name = "cboFirstStopInput";
             this.cboFirstStopInput.Size = new System.Drawing.Size(105, 21);
             this.cboFirstStopInput.TabIndex = 14;
+            this.cboFirstStopInput.SelectedIndexChanged += new System.EventHandler(this.cboFirstStopInput_SelectedIndexChanged);
             // 
             // cboNextStopInput
             // 
             this.cboNextStopInput.FormattingEnabled = true;
             this.cboNextStopInput.Location = new System.Drawing.Point(31, 167);
-            this.cboNextStopInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboNextStopInput.Margin = new System.Windows.Forms.Padding(2);
             this.cboNextStopInput.Name = "cboNextStopInput";
             this.cboNextStopInput.Size = new System.Drawing.Size(105, 21);
             this.cboNextStopInput.TabIndex = 15;
@@ -201,7 +202,7 @@
             this.Controls.Add(this.lblNextStopInput);
             this.Controls.Add(this.lblFirstStopInput);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Modify";
             this.Text = "Modifier l\'intervalle de temps entre 2 arrêts";
             ((System.ComponentModel.ISupportInitialize)(this.nudNewValue)).EndInit();

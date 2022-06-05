@@ -31,13 +31,13 @@
             this.lblLine = new System.Windows.Forms.Label();
             this.lblStartStop = new System.Windows.Forms.Label();
             this.lblNewStartHourly = new System.Windows.Forms.Label();
-            this.cmdStartHourly = new System.Windows.Forms.Button();
             this.cmdAdd = new System.Windows.Forms.Button();
             this.lblStartHourly = new System.Windows.Forms.Label();
             this.lstHourly = new System.Windows.Forms.ListBox();
             this.cmdValidate = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
             this.cboStop = new System.Windows.Forms.ComboBox();
+            this.txtStartHourly = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblLine
@@ -71,25 +71,16 @@
             this.lblNewStartHourly.TabIndex = 3;
             this.lblNewStartHourly.Text = "Nouvel horaire de Départ";
             // 
-            // cmdStartHourly
-            // 
-            this.cmdStartHourly.Location = new System.Drawing.Point(24, 208);
-            this.cmdStartHourly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmdStartHourly.Name = "cmdStartHourly";
-            this.cmdStartHourly.Size = new System.Drawing.Size(123, 24);
-            this.cmdStartHourly.TabIndex = 4;
-            this.cmdStartHourly.Text = "cmdStartHourly";
-            this.cmdStartHourly.UseVisualStyleBackColor = true;
-            // 
             // cmdAdd
             // 
             this.cmdAdd.Location = new System.Drawing.Point(24, 249);
-            this.cmdAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdAdd.Margin = new System.Windows.Forms.Padding(2);
             this.cmdAdd.Name = "cmdAdd";
             this.cmdAdd.Size = new System.Drawing.Size(123, 24);
             this.cmdAdd.TabIndex = 5;
             this.cmdAdd.Text = "Ajouter";
             this.cmdAdd.UseVisualStyleBackColor = true;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // lblStartHourly
             // 
@@ -104,8 +95,8 @@
             // lstHourly
             // 
             this.lstHourly.FormattingEnabled = true;
-            this.lstHourly.Location = new System.Drawing.Point(193, 68);
-            this.lstHourly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstHourly.Location = new System.Drawing.Point(194, 66);
+            this.lstHourly.Margin = new System.Windows.Forms.Padding(2);
             this.lstHourly.Name = "lstHourly";
             this.lstHourly.Size = new System.Drawing.Size(125, 134);
             this.lstHourly.TabIndex = 7;
@@ -113,7 +104,7 @@
             // cmdValidate
             // 
             this.cmdValidate.Location = new System.Drawing.Point(193, 208);
-            this.cmdValidate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdValidate.Margin = new System.Windows.Forms.Padding(2);
             this.cmdValidate.Name = "cmdValidate";
             this.cmdValidate.Size = new System.Drawing.Size(123, 24);
             this.cmdValidate.TabIndex = 8;
@@ -123,7 +114,7 @@
             // cmdQuit
             // 
             this.cmdQuit.Location = new System.Drawing.Point(193, 249);
-            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2);
             this.cmdQuit.Name = "cmdQuit";
             this.cmdQuit.Size = new System.Drawing.Size(123, 24);
             this.cmdQuit.TabIndex = 9;
@@ -135,28 +126,36 @@
             // 
             this.cboStop.FormattingEnabled = true;
             this.cboStop.Location = new System.Drawing.Point(43, 86);
-            this.cboStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboStop.Margin = new System.Windows.Forms.Padding(2);
             this.cboStop.Name = "cboStop";
             this.cboStop.Size = new System.Drawing.Size(82, 21);
             this.cboStop.TabIndex = 10;
             this.cboStop.Text = "Arrêt X";
+            // 
+            // txtStartHourly
+            // 
+            this.txtStartHourly.Location = new System.Drawing.Point(27, 212);
+            this.txtStartHourly.Name = "txtStartHourly";
+            this.txtStartHourly.Size = new System.Drawing.Size(120, 20);
+            this.txtStartHourly.TabIndex = 11;
+            this.txtStartHourly.TextChanged += new System.EventHandler(this.txtStartHourly_TextChanged);
             // 
             // AddLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 292);
+            this.Controls.Add(this.txtStartHourly);
             this.Controls.Add(this.cboStop);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdValidate);
             this.Controls.Add(this.lstHourly);
             this.Controls.Add(this.lblStartHourly);
             this.Controls.Add(this.cmdAdd);
-            this.Controls.Add(this.cmdStartHourly);
             this.Controls.Add(this.lblNewStartHourly);
             this.Controls.Add(this.lblStartStop);
             this.Controls.Add(this.lblLine);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddLine";
             this.Text = "Ajouter une ligne";
             this.ResumeLayout(false);
@@ -169,12 +168,12 @@
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Label lblStartStop;
         private System.Windows.Forms.Label lblNewStartHourly;
-        private System.Windows.Forms.Button cmdStartHourly;
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.Label lblStartHourly;
         private System.Windows.Forms.ListBox lstHourly;
         private System.Windows.Forms.Button cmdValidate;
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.ComboBox cboStop;
+        private System.Windows.Forms.TextBox txtStartHourly;
     }
 }

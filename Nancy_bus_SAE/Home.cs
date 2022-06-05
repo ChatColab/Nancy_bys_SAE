@@ -84,12 +84,12 @@ namespace Nancy_bus_SAE
             //open new form
             if (optDeleteLine.Checked)
             {
-                DeleteLine deleteLine = new DeleteLine();
+                DelLine deleteLine = new DelLine();
                 deleteLine.ShowDialog();
             }
             else if (optDeleteStop.Checked)
             {
-                DeleteStop deleteStop = new DeleteStop();
+                DelStop deleteStop = new DelStop();
                 deleteStop.ShowDialog();
             }
         }

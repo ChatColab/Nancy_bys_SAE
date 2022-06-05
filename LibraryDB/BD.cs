@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,12 +13,18 @@ namespace LibraryDB
         private static MySqlConnection cnx;
 
         public static void initConnexion()
-        {            
+        {
+            /*
             String server = "10.1.139.236";
             String login = "c2";
             String passwd = "mdp";
-            String BD = "basec2";
-            string connexion = $"SERVER={server};DATABASE={BD};UID={login};PASSWORD={passwd};";
+            String BDD = "basec2";
+            */
+            String server = "";
+            String login = "";
+            String passwd = "";
+            String BDD = "";
+            string connexion = $"SERVER={server};DATABASE={BDD};UID={login};PASSWORD={passwd};";
 
             cnx = new MySqlConnection(connexion);
 
@@ -136,6 +142,15 @@ namespace LibraryDB
             }
             dr.Close();
             return res;
+        }
+
+        public static List<string> getNomArretLink(string nomArret)
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret from Arret as Arret1, Arret as Arret2, Trajet  where Arret1.nArret = Trajet.nArretA and Arret2.nArret = Trajet.nArretB;";
+            dr = cmd.ExecuteReader();
         }
 
         public static List<String> getNomArret()
