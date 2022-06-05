@@ -27,6 +27,8 @@ namespace Nancy_bus_SAE
             lblNextStop.Enabled = false;
             lblPrevStop.Enabled = false;
             cmdAdd.Enabled = false;
+            nudNextStop.Enabled = false;
+            nudPrevStop.Enabled = false;
 
             //cboLine
             List<string> fill = new List<string>();
@@ -37,28 +39,54 @@ namespace Nancy_bus_SAE
             }
 
             
-        }
-
-        private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-            List<string> fill = new List<string>();
-            fill = BD.getNomArret(cboLine.Text.Substring(6));
+            List<string> fill2 = new List<string>();
+            fill = BD.getNomArret();
 
             cboStop.Items.Add("Nouvel Arrêt");
-            foreach (string s in fill)
+            foreach (string s in fill2)
             {
                 cboStop.Items.Add(s);
             }
 
+        }
+
+        private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
+        {
             cboStop.Enabled = true;
-            cboPrevStop.Enabled = true;
-            cboNextStop.Enabled = true;
+
+            //fill prev and next Stop comboboxes
+            List<string> fill = new List<string>();
+            fill = BD.getNomArret(cboLine.Text.Substring(6));
+
+            cboPrevStop.Items.Clear();
+            cboNextStop.Items.Clear();
+
+            cboPrevStop.Items.Add("Aucun (début de ligne)");
+            foreach (string s in fill)
+            {
+                cboPrevStop.Items.Add(s);
+                cboNextStop.Items.Add(s);
+            }
+            cboNextStop.Items.Add("Aucun (fin de ligne)");
         }
 
         private void cboStop_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            cboPrevStop.Enabled = true;
+            cboNextStop.Enabled = true;
+            nudPrevStop.Enabled = true;
+            nudNextStop.Enabled = true;
+            lblNextStop.Enabled = true;
+            lblPrevStop.Enabled = true;
+
+
+            if (cboStop.Text == "Nouvel Arrêt")
+            {
+                txtNewStop.Enabled = true;
+                lblNewStop.Enabled = true;
+            }
+            
             //le code ci-dessous est est copiloté (pas forcemment bon)
             /*
             if (cboStop.Text == "Nouvel Arrêt")
