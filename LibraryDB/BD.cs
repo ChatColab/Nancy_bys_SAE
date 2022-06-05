@@ -144,13 +144,48 @@ namespace LibraryDB
             return res;
         }
 
-        public static List<string> getNomArretLink(string nomArret)
+        public static int getNumArret(string nomArret)
         {
+            int res = -1;
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
-            cmd.CommandText = $"select Arret1.nomArret, Arret2.nomArret from Arret as Arret1, Arret as Arret2, Trajet  where Arret1.nArret = Trajet.nArretA and Arret2.nArret = Trajet.nArretB;";
+            cmd.CommandText = $"select nArret from Arret where nomArret = '{nomArret}'";
             dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                res = Convert.ToInt32(dr["nArret"]);
+            }
+            dr.Close();
+            return res;
+        }
+
+        public static List<string> getNomArretLink(string nomArret)
+        {
+            int nArret = getNumArret(nomArret);
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where nLigne = {nArret} and Arret1.nArret=TempsTrajet.nArretA and Arret2.nArret=TempsTrajet.nArretB and TempsTrajet.nArretA = {nArret};";
+            dr = cmd.ExecuteReader();
+            List<string> res = new List<string>();
+            while (dr.Read())
+            {
+                res.Add(Convert.ToString(dr["nomArret"]));
+            }
+            dr.Close();
+            MySqlDataReader dr2;
+            cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where nLigne = {nArret} and Arret1.nArret=TempsTrajet.nArretA and Arret2.nArret=TempsTrajet.nArretB and TempsTrajet.nArretB = {nArret};";
+            dr2 = cmd.ExecuteReader();
+            while (dr2.Read())
+            {
+                res.Add(Convert.ToString(dr2["nomArret"]));
+            }
+            dr2.Close();
+            res = res.Distinct().ToList();
+            return res;
         }
 
         public static List<String> getNomArret()

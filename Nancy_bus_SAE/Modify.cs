@@ -17,6 +17,11 @@ namespace Nancy_bus_SAE
         {
             InitializeComponent();
 
+            cboNextStopInput.Enabled = false;
+            cmdValidate.Enabled = false;
+            pnlTime.Enabled = false;
+            nudNewValue.Value = 1;
+
             List<string> fill = new List<string>();
             fill = BD.getNomArret();
             foreach (string s in fill)
@@ -24,7 +29,7 @@ namespace Nancy_bus_SAE
                 cboFirstStopInput.Items.Add(s);
             }
 
-            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -45,8 +50,43 @@ namespace Nancy_bus_SAE
 
         private void cboFirstStopInput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<string> fill2 = new List<string>();
-            //fill2 = BD.getNomArretLink(cboFirstStopInput.Text)
+            {
+
+                lblFirstStop.Text = cboFirstStopInput.Text;
+                cboNextStopInput.Enabled = true;
+                cmdValidate.Enabled = false;
+
+                List<string> fill2 = new List<string>();
+                fill2 = BD.getNomArretLink(cboFirstStopInput.Text);
+                foreach (string s in fill2)
+                {
+                    cboNextStopInput.Items.Add(s);
+                }
+            }
+        }
+
+        private void cboNextStopInput_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblNextStop.Text = cboNextStopInput.Text;
+            cmdValidate.Enabled = true;
+        }
+
+        private void cmdValidate_Click(object sender, EventArgs e)
+        {
+            pnlTime.Enabled = true;
+        }
+
+        private void nudNewValue_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudNewValue.Value < 1)
+            {
+                nudNewValue.Value = 1;
+            }
+        }
+
+        private void cmdSave_Click(object sender, EventArgs e)
+        {
+            //requete pour changer la bd
         }
     }
 }
