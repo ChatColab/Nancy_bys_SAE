@@ -79,7 +79,7 @@ namespace Nancy_bus_SAE
 
         private void cmdDelete_Click(object sender, EventArgs e)
         {
-            /*//hide active form
+            //hide active form
             this.Hide();
             //open new form
             if (optDeleteLine.Checked)
@@ -91,7 +91,7 @@ namespace Nancy_bus_SAE
             {
                 DeleteStop deleteStop = new DeleteStop();
                 deleteStop.ShowDialog();
-            }*/
+            }
         }
 
         private void cmdModify_Click(object sender, EventArgs e)

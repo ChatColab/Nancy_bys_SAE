@@ -36,37 +36,42 @@
             // cboLine
             // 
             this.cboLine.FormattingEnabled = true;
-            this.cboLine.Location = new System.Drawing.Point(31, 46);
+            this.cboLine.Location = new System.Drawing.Point(21, 30);
+            this.cboLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboLine.Name = "cboLine";
-            this.cboLine.Size = new System.Drawing.Size(311, 28);
+            this.cboLine.Size = new System.Drawing.Size(209, 21);
             this.cboLine.TabIndex = 0;
             // 
             // cmdDel
             // 
-            this.cmdDel.Location = new System.Drawing.Point(31, 265);
+            this.cmdDel.Location = new System.Drawing.Point(21, 172);
+            this.cmdDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDel.Name = "cmdDel";
-            this.cmdDel.Size = new System.Drawing.Size(311, 32);
+            this.cmdDel.Size = new System.Drawing.Size(207, 21);
             this.cmdDel.TabIndex = 1;
             this.cmdDel.Text = "Supprimer";
             this.cmdDel.UseVisualStyleBackColor = true;
             // 
             // cmdQuit
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(31, 327);
+            this.cmdQuit.Location = new System.Drawing.Point(21, 213);
+            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdQuit.Name = "cmdQuit";
-            this.cmdQuit.Size = new System.Drawing.Size(311, 32);
+            this.cmdQuit.Size = new System.Drawing.Size(207, 21);
             this.cmdQuit.TabIndex = 2;
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
+            this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
             // 
             // DelLine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 421);
+            this.ClientSize = new System.Drawing.Size(257, 274);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdDel);
             this.Controls.Add(this.cboLine);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DelLine";
             this.Text = "Supprimer une Ligne";
             this.ResumeLayout(false);

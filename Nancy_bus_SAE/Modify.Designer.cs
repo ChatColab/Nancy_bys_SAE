@@ -48,105 +48,118 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 31);
+            this.label1.Location = new System.Drawing.Point(26, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 20);
+            this.label1.Size = new System.Drawing.Size(130, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Saisir les arrêts concernés";
             // 
             // lblFirstStopInput
             // 
             this.lblFirstStopInput.AutoSize = true;
-            this.lblFirstStopInput.Location = new System.Drawing.Point(43, 80);
+            this.lblFirstStopInput.Location = new System.Drawing.Point(29, 52);
+            this.lblFirstStopInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstStopInput.Name = "lblFirstStopInput";
-            this.lblFirstStopInput.Size = new System.Drawing.Size(160, 20);
+            this.lblFirstStopInput.Size = new System.Drawing.Size(105, 13);
             this.lblFirstStopInput.TabIndex = 1;
             this.lblFirstStopInput.Text = "Saisir le premier Arrêt";
             // 
             // lblNextStopInput
             // 
             this.lblNextStopInput.AutoSize = true;
-            this.lblNextStopInput.Location = new System.Drawing.Point(43, 234);
+            this.lblNextStopInput.Location = new System.Drawing.Point(29, 152);
+            this.lblNextStopInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNextStopInput.Name = "lblNextStopInput";
-            this.lblNextStopInput.Size = new System.Drawing.Size(147, 20);
+            this.lblNextStopInput.Size = new System.Drawing.Size(98, 13);
             this.lblNextStopInput.TabIndex = 2;
             this.lblNextStopInput.Text = "Saisir l\'Arrêt suivant";
             // 
             // cmdValidate
             // 
-            this.cmdValidate.Location = new System.Drawing.Point(43, 333);
+            this.cmdValidate.Location = new System.Drawing.Point(29, 216);
+            this.cmdValidate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdValidate.Name = "cmdValidate";
-            this.cmdValidate.Size = new System.Drawing.Size(160, 37);
+            this.cmdValidate.Size = new System.Drawing.Size(107, 24);
             this.cmdValidate.TabIndex = 5;
             this.cmdValidate.Text = "Valider";
             this.cmdValidate.UseVisualStyleBackColor = true;
             // 
             // cmdQuit
             // 
-            this.cmdQuit.Location = new System.Drawing.Point(43, 393);
+            this.cmdQuit.Location = new System.Drawing.Point(29, 255);
+            this.cmdQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdQuit.Name = "cmdQuit";
-            this.cmdQuit.Size = new System.Drawing.Size(160, 37);
+            this.cmdQuit.Size = new System.Drawing.Size(107, 24);
             this.cmdQuit.TabIndex = 6;
             this.cmdQuit.Text = "Quitter";
             this.cmdQuit.UseVisualStyleBackColor = true;
+            this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
             // 
             // lblModifyStop
             // 
             this.lblModifyStop.AutoSize = true;
-            this.lblModifyStop.Location = new System.Drawing.Point(341, 31);
+            this.lblModifyStop.Location = new System.Drawing.Point(227, 20);
+            this.lblModifyStop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModifyStop.Name = "lblModifyStop";
-            this.lblModifyStop.Size = new System.Drawing.Size(136, 20);
+            this.lblModifyStop.Size = new System.Drawing.Size(90, 13);
             this.lblModifyStop.TabIndex = 7;
             this.lblModifyStop.Text = "Modifier les Arrêts";
             // 
             // lblNewValue
             // 
             this.lblNewValue.AutoSize = true;
-            this.lblNewValue.Location = new System.Drawing.Point(341, 80);
+            this.lblNewValue.Location = new System.Drawing.Point(227, 52);
+            this.lblNewValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewValue.Name = "lblNewValue";
-            this.lblNewValue.Size = new System.Drawing.Size(115, 20);
+            this.lblNewValue.Size = new System.Drawing.Size(81, 13);
             this.lblNewValue.TabIndex = 8;
             this.lblNewValue.Text = "Nouvelle valeur";
             // 
             // nudNewValue
             // 
-            this.nudNewValue.Location = new System.Drawing.Point(345, 117);
+            this.nudNewValue.Location = new System.Drawing.Point(230, 76);
+            this.nudNewValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudNewValue.Name = "nudNewValue";
-            this.nudNewValue.Size = new System.Drawing.Size(120, 26);
+            this.nudNewValue.Size = new System.Drawing.Size(80, 20);
             this.nudNewValue.TabIndex = 9;
             // 
             // lblFirstStop
             // 
             this.lblFirstStop.AutoSize = true;
-            this.lblFirstStop.Location = new System.Drawing.Point(345, 188);
+            this.lblFirstStop.Location = new System.Drawing.Point(230, 122);
+            this.lblFirstStop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFirstStop.Name = "lblFirstStop";
-            this.lblFirstStop.Size = new System.Drawing.Size(51, 20);
+            this.lblFirstStop.Size = new System.Drawing.Size(35, 13);
             this.lblFirstStop.TabIndex = 10;
             this.lblFirstStop.Text = "label2";
             // 
             // lblNextStop
             // 
             this.lblNextStop.AutoSize = true;
-            this.lblNextStop.Location = new System.Drawing.Point(461, 188);
+            this.lblNextStop.Location = new System.Drawing.Point(307, 122);
+            this.lblNextStop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNextStop.Name = "lblNextStop";
-            this.lblNextStop.Size = new System.Drawing.Size(51, 20);
+            this.lblNextStop.Size = new System.Drawing.Size(35, 13);
             this.lblNextStop.TabIndex = 11;
             this.lblNextStop.Text = "label2";
             // 
             // lblArrow
             // 
             this.lblArrow.AutoSize = true;
-            this.lblArrow.Location = new System.Drawing.Point(402, 188);
+            this.lblArrow.Location = new System.Drawing.Point(268, 122);
+            this.lblArrow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArrow.Name = "lblArrow";
-            this.lblArrow.Size = new System.Drawing.Size(38, 20);
+            this.lblArrow.Size = new System.Drawing.Size(25, 13);
             this.lblArrow.TabIndex = 12;
             this.lblArrow.Text = "---->";
             // 
             // cmdSave
             // 
-            this.cmdSave.Location = new System.Drawing.Point(345, 333);
+            this.cmdSave.Location = new System.Drawing.Point(230, 216);
+            this.cmdSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdSave.Name = "cmdSave";
-            this.cmdSave.Size = new System.Drawing.Size(179, 37);
+            this.cmdSave.Size = new System.Drawing.Size(119, 24);
             this.cmdSave.TabIndex = 13;
             this.cmdSave.Text = "Valider et Enregistrer";
             this.cmdSave.UseVisualStyleBackColor = true;
@@ -154,24 +167,26 @@
             // cboFirstStopInput
             // 
             this.cboFirstStopInput.FormattingEnabled = true;
-            this.cboFirstStopInput.Location = new System.Drawing.Point(47, 117);
+            this.cboFirstStopInput.Location = new System.Drawing.Point(31, 76);
+            this.cboFirstStopInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboFirstStopInput.Name = "cboFirstStopInput";
-            this.cboFirstStopInput.Size = new System.Drawing.Size(156, 28);
+            this.cboFirstStopInput.Size = new System.Drawing.Size(105, 21);
             this.cboFirstStopInput.TabIndex = 14;
             // 
             // cboNextStopInput
             // 
             this.cboNextStopInput.FormattingEnabled = true;
-            this.cboNextStopInput.Location = new System.Drawing.Point(47, 257);
+            this.cboNextStopInput.Location = new System.Drawing.Point(31, 167);
+            this.cboNextStopInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboNextStopInput.Name = "cboNextStopInput";
-            this.cboNextStopInput.Size = new System.Drawing.Size(156, 28);
+            this.cboNextStopInput.Size = new System.Drawing.Size(105, 21);
             this.cboNextStopInput.TabIndex = 15;
             // 
             // Modify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.cboNextStopInput);
             this.Controls.Add(this.cboFirstStopInput);
             this.Controls.Add(this.cmdSave);
@@ -186,6 +201,7 @@
             this.Controls.Add(this.lblNextStopInput);
             this.Controls.Add(this.lblFirstStopInput);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Modify";
             this.Text = "Modifier l\'intervalle de temps entre 2 arrêts";
             ((System.ComponentModel.ISupportInitialize)(this.nudNewValue)).EndInit();

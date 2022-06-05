@@ -24,5 +24,16 @@ namespace Nancy_bus_SAE
                 cboStop.Items.Add(s);
             }
         }
+
+        private void cmdQuit_Click(object sender, EventArgs e)
+        {
+            //unhide Home (pas copiloté, stackoverflow)
+            var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+            this.Close();
+        }
     }
 }
