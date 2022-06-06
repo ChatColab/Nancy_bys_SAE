@@ -52,9 +52,10 @@
             // 
             this.lblTitleHome.AutoSize = true;
             this.lblTitleHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleHome.Location = new System.Drawing.Point(131, 30);
+            this.lblTitleHome.Location = new System.Drawing.Point(87, 20);
+            this.lblTitleHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitleHome.Name = "lblTitleHome";
-            this.lblTitleHome.Size = new System.Drawing.Size(542, 32);
+            this.lblTitleHome.Size = new System.Drawing.Size(363, 24);
             this.lblTitleHome.TabIndex = 0;
             this.lblTitleHome.Text = "Gestionnaire du Réseau de Bus de Nancy";
             // 
@@ -63,18 +64,21 @@
             this.grpAdd.Controls.Add(this.cmdAdd);
             this.grpAdd.Controls.Add(this.optAddStop);
             this.grpAdd.Controls.Add(this.optAddLine);
-            this.grpAdd.Location = new System.Drawing.Point(83, 94);
+            this.grpAdd.Location = new System.Drawing.Point(55, 61);
+            this.grpAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAdd.Name = "grpAdd";
-            this.grpAdd.Size = new System.Drawing.Size(278, 147);
+            this.grpAdd.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAdd.Size = new System.Drawing.Size(185, 96);
             this.grpAdd.TabIndex = 1;
             this.grpAdd.TabStop = false;
             this.grpAdd.Text = "Ajouter";
             // 
             // cmdAdd
             // 
-            this.cmdAdd.Location = new System.Drawing.Point(94, 96);
+            this.cmdAdd.Location = new System.Drawing.Point(63, 62);
+            this.cmdAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdAdd.Name = "cmdAdd";
-            this.cmdAdd.Size = new System.Drawing.Size(85, 30);
+            this.cmdAdd.Size = new System.Drawing.Size(57, 20);
             this.cmdAdd.TabIndex = 2;
             this.cmdAdd.Text = "Ajouter";
             this.cmdAdd.UseVisualStyleBackColor = true;
@@ -83,9 +87,10 @@
             // optAddStop
             // 
             this.optAddStop.AutoSize = true;
-            this.optAddStop.Location = new System.Drawing.Point(161, 41);
+            this.optAddStop.Location = new System.Drawing.Point(107, 27);
+            this.optAddStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optAddStop.Name = "optAddStop";
-            this.optAddStop.Size = new System.Drawing.Size(69, 24);
+            this.optAddStop.Size = new System.Drawing.Size(47, 17);
             this.optAddStop.TabIndex = 1;
             this.optAddStop.TabStop = true;
             this.optAddStop.Text = "Arrêt";
@@ -95,9 +100,10 @@
             // optAddLine
             // 
             this.optAddLine.AutoSize = true;
-            this.optAddLine.Location = new System.Drawing.Point(48, 41);
+            this.optAddLine.Location = new System.Drawing.Point(32, 27);
+            this.optAddLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optAddLine.Name = "optAddLine";
-            this.optAddLine.Size = new System.Drawing.Size(73, 24);
+            this.optAddLine.Size = new System.Drawing.Size(51, 17);
             this.optAddLine.TabIndex = 0;
             this.optAddLine.TabStop = true;
             this.optAddLine.Text = "Ligne";
@@ -109,18 +115,21 @@
             this.grpDelete.Controls.Add(this.cmdDelete);
             this.grpDelete.Controls.Add(this.optDeleteStop);
             this.grpDelete.Controls.Add(this.optDeleteLine);
-            this.grpDelete.Location = new System.Drawing.Point(444, 94);
+            this.grpDelete.Location = new System.Drawing.Point(296, 61);
+            this.grpDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpDelete.Name = "grpDelete";
-            this.grpDelete.Size = new System.Drawing.Size(278, 147);
+            this.grpDelete.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDelete.Size = new System.Drawing.Size(185, 96);
             this.grpDelete.TabIndex = 2;
             this.grpDelete.TabStop = false;
             this.grpDelete.Text = "Supprimer";
             // 
             // cmdDelete
             // 
-            this.cmdDelete.Location = new System.Drawing.Point(100, 96);
+            this.cmdDelete.Location = new System.Drawing.Point(67, 62);
+            this.cmdDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDelete.Name = "cmdDelete";
-            this.cmdDelete.Size = new System.Drawing.Size(92, 30);
+            this.cmdDelete.Size = new System.Drawing.Size(61, 20);
             this.cmdDelete.TabIndex = 5;
             this.cmdDelete.Text = "Supprimer";
             this.cmdDelete.UseVisualStyleBackColor = true;
@@ -129,9 +138,10 @@
             // optDeleteStop
             // 
             this.optDeleteStop.AutoSize = true;
-            this.optDeleteStop.Location = new System.Drawing.Point(168, 41);
+            this.optDeleteStop.Location = new System.Drawing.Point(112, 27);
+            this.optDeleteStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optDeleteStop.Name = "optDeleteStop";
-            this.optDeleteStop.Size = new System.Drawing.Size(69, 24);
+            this.optDeleteStop.Size = new System.Drawing.Size(47, 17);
             this.optDeleteStop.TabIndex = 4;
             this.optDeleteStop.TabStop = true;
             this.optDeleteStop.Text = "Arrêt";
@@ -141,9 +151,10 @@
             // optDeleteLine
             // 
             this.optDeleteLine.AutoSize = true;
-            this.optDeleteLine.Location = new System.Drawing.Point(48, 41);
+            this.optDeleteLine.Location = new System.Drawing.Point(32, 27);
+            this.optDeleteLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.optDeleteLine.Name = "optDeleteLine";
-            this.optDeleteLine.Size = new System.Drawing.Size(73, 24);
+            this.optDeleteLine.Size = new System.Drawing.Size(51, 17);
             this.optDeleteLine.TabIndex = 3;
             this.optDeleteLine.TabStop = true;
             this.optDeleteLine.Text = "Ligne";
@@ -154,9 +165,11 @@
             // 
             this.grpPrint.Controls.Add(this.lstLine);
             this.grpPrint.Controls.Add(this.cmdPrint);
-            this.grpPrint.Location = new System.Drawing.Point(444, 278);
+            this.grpPrint.Location = new System.Drawing.Point(296, 181);
+            this.grpPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpPrint.Name = "grpPrint";
-            this.grpPrint.Size = new System.Drawing.Size(278, 147);
+            this.grpPrint.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpPrint.Size = new System.Drawing.Size(185, 96);
             this.grpPrint.TabIndex = 3;
             this.grpPrint.TabStop = false;
             this.grpPrint.Text = "Afficher Ligne";
@@ -164,17 +177,18 @@
             // lstLine
             // 
             this.lstLine.FormattingEnabled = true;
-            this.lstLine.ItemHeight = 20;
-            this.lstLine.Location = new System.Drawing.Point(120, 16);
+            this.lstLine.Location = new System.Drawing.Point(80, 10);
+            this.lstLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstLine.Name = "lstLine";
-            this.lstLine.Size = new System.Drawing.Size(152, 124);
+            this.lstLine.Size = new System.Drawing.Size(103, 82);
             this.lstLine.TabIndex = 1;
             // 
             // cmdPrint
             // 
-            this.cmdPrint.Location = new System.Drawing.Point(20, 67);
+            this.cmdPrint.Location = new System.Drawing.Point(13, 44);
+            this.cmdPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdPrint.Name = "cmdPrint";
-            this.cmdPrint.Size = new System.Drawing.Size(85, 30);
+            this.cmdPrint.Size = new System.Drawing.Size(57, 20);
             this.cmdPrint.TabIndex = 0;
             this.cmdPrint.Text = "Afficher";
             this.cmdPrint.UseVisualStyleBackColor = true;
@@ -183,18 +197,21 @@
             // grpModify
             // 
             this.grpModify.Controls.Add(this.cmdModify);
-            this.grpModify.Location = new System.Drawing.Point(83, 278);
+            this.grpModify.Location = new System.Drawing.Point(55, 181);
+            this.grpModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpModify.Name = "grpModify";
-            this.grpModify.Size = new System.Drawing.Size(278, 147);
+            this.grpModify.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpModify.Size = new System.Drawing.Size(185, 96);
             this.grpModify.TabIndex = 4;
             this.grpModify.TabStop = false;
             this.grpModify.Text = "Modifier Intervalle Ligne";
             // 
             // cmdModify
             // 
-            this.cmdModify.Location = new System.Drawing.Point(94, 67);
+            this.cmdModify.Location = new System.Drawing.Point(63, 44);
+            this.cmdModify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdModify.Name = "cmdModify";
-            this.cmdModify.Size = new System.Drawing.Size(85, 30);
+            this.cmdModify.Size = new System.Drawing.Size(57, 20);
             this.cmdModify.TabIndex = 0;
             this.cmdModify.Text = "Modifier";
             this.cmdModify.UseVisualStyleBackColor = true;
@@ -202,18 +219,20 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.grpModify);
             this.Controls.Add(this.grpPrint);
             this.Controls.Add(this.grpDelete);
             this.Controls.Add(this.grpAdd);
             this.Controls.Add(this.lblTitleHome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
+            this.VisibleChanged += new System.EventHandler(this.Home_VisibleChanged);
             this.grpAdd.ResumeLayout(false);
             this.grpAdd.PerformLayout();
             this.grpDelete.ResumeLayout(false);

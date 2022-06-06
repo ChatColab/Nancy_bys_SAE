@@ -110,5 +110,16 @@ namespace Nancy_bus_SAE
             PrintLine print = new PrintLine(BD.getNumLigne(ligne.Substring(6)));
             print.ShowDialog();
         }
+
+        private void Home_VisibleChanged(object sender, EventArgs e)
+        {
+            List<String> fill;
+            fill = BD.getNomLigne();
+            lstLine.Items.Clear();
+            foreach (String s in fill)
+            {
+                lstLine.Items.Add("Ligne " + s);
+            }
+        }
     }
 }
