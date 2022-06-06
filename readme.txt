@@ -1,3 +1,4 @@
+Samuel De Moraix, Florian Escande, Gaëtan Littière, Joseph Veys, Thomas Carré, Nathan Isabet
 Fonctionnalités :
 -Modifier intervalleTemps       opérationnel
 -Affichage Ligne                opérationnel
