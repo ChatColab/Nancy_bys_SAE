@@ -27,13 +27,6 @@ namespace Nancy_bus_SAE
             optDeleteLine.Checked = true;
             optDeleteStop.Checked = false;
 
-            List<String> fill;
-            fill = BD.getNomLigne();
-            foreach (String s in fill)
-            {
-                lstLine.Items.Add("Ligne " + s);
-            }
-
         }
 
         //gère les boutons radios 
@@ -125,41 +118,22 @@ namespace Nancy_bus_SAE
         //refresh de la listbox a chaque fois que home apparait
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
-            bool a = false;
-            bool b = false;
-            List<String> fill;
+            List<string> tmp = new List<string>();
+            List<String> fill = new List<String>();
             fill = BD.getNomLigne();
-            foreach (string s in fill)
-            {
-                foreach (string d in lstLine.Items)
-                {
-                    if (s == d.Substring(6))
-                    {
-                        a = true;
-                    }
-                }
-                if (!a)
-                {
-                    lstLine.Items.Add("Ligne " + s);
-                }
-                a = false;
-            }
-
             foreach (string d in lstLine.Items)
             {
-                foreach (string s in fill)
-                {
-                    if (s == d.Substring(6))
-                    {
-                        b = true;
-                    }
-                }
-                if (!b)
-                {
-                    lstLine.Items.Remove(d);
-                }
-                b = false;
+                tmp.Add(d);
             }
+            foreach (string d in tmp) {
+                lstLine.Items.Remove(d);
+            }
+            foreach (string s in fill)
+            {
+                lstLine.Items.Add("Ligne " + s);
+            }
+            lstLine.Sorted = true;
+
         }
     }
 }

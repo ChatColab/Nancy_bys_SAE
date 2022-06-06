@@ -176,15 +176,75 @@ namespace LibraryDB
             return res;
         }
 
+        public static void alterIntervalle(int nArret1, int nArret2, int inter)
+        {
+            string tmp = null;
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select intervalleTemps from TempsTrajet set intervalleTemps = {inter} where nArretA = {nArret1} and nArretB = {nArret2};";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                tmp = Convert.ToString(dr["intervalleTemps"]);
+            }
+            dr.Close();
+            if (tmp == null)
+            {
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"update TempsTrajet set intervalleTemps = {inter} where nArretA = {nArret2} and nArretB = {nArret1};";
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"update TempsTrajet set intervalleTemps = {inter} where nArretA = {nArret1} and nArretB = {nArret2};";
+                cmd.ExecuteNonQuery();
+            }
+        }
+        
         public static void delLine(int nLigne)
         {
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cnx;
+                cmd.CommandText = $"delete from Trajet where nLigne = {nLigne};";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"delete from HoraireDepart where nLigne = {nLigne};";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
                 cmd.CommandText = $"delete from Ligne where nLigne = {nLigne};";
                 cmd.ExecuteNonQuery();
-            }catch (Exception e)
+
+                //met à jour les numéros de ligne suivants
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"SET FOREIGN_KEY_CHECKS=0;";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"update Trajet set nLigne = nLigne - 1 where nLigne > {nLigne};";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"update HoraireDepart set nLigne = nLigne - 1 where nLigne > {nLigne};";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"update Ligne set nLigne = nLigne - 1 where nLigne > {nLigne};";
+                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"SET FOREIGN_KEY_CHECKS=1;";
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }

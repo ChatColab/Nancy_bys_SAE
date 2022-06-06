@@ -17,9 +17,14 @@ namespace Nancy_bus_SAE
         {
             InitializeComponent();
 
+            lblArrow.Enabled = false;
+            lblFirstStop.Enabled = false;
+            lblNextStop.Enabled = false;
+            lblNewValue.Enabled = false;
+            lblModifyStop.Enabled = false;
+            nudNewValue.Enabled = false;
             cboNextStopInput.Enabled = false;
             cmdValidate.Enabled = false;
-            pnlTime.Enabled = false;
             nudNewValue.Value = 1;
 
             List<string> fill = new List<string>();
@@ -74,7 +79,12 @@ namespace Nancy_bus_SAE
 
         private void cmdValidate_Click(object sender, EventArgs e)
         {
-            pnlTime.Enabled = true;
+            lblArrow.Enabled = true;
+            lblFirstStop.Enabled = true;
+            lblNextStop.Enabled = true;
+            lblNewValue.Enabled = true;
+            lblModifyStop.Enabled = true;
+            nudNewValue.Enabled = true;
         }
 
         private void nudNewValue_ValueChanged(object sender, EventArgs e)
@@ -87,7 +97,7 @@ namespace Nancy_bus_SAE
 
         private void cmdSave_Click(object sender, EventArgs e)
         {
-            //requete pour changer la bd
+            BD.alterIntervalle(BD.getNumArret(cboFirstStopInput.Text), BD.getNumArret(cboNextStopInput.Text), (int)nudNewValue.Value);
         }
     }
 }
