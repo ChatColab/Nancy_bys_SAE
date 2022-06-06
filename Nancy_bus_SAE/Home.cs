@@ -26,14 +26,14 @@ namespace Nancy_bus_SAE
             optAddStop.Checked = false;
             optDeleteLine.Checked = true;
             optDeleteStop.Checked = false;
-            
+
             List<String> fill;
             fill = BD.getNomLigne();
             foreach (String s in fill)
             {
                 lstLine.Items.Add("Ligne " + s);
             }
-            
+
         }
 
         private void optAddStop_Click(object sender, EventArgs e)

@@ -44,9 +44,9 @@ namespace Nancy_bus_SAE
 
         private void cmdAdd_Click(object sender, EventArgs e)
         {
-            int heure = (int)nudHours.Value;
-            int minute = (int)nudMinutes.Value;
-            int seconde = (int)nudSeconds.Value;
+            string heure = nudHours.Value.ToString("00");
+            string minute = nudMinutes.Value.ToString("00");
+            string seconde = nudSeconds.Value.ToString("00");
             string time = $"{heure}:{minute}:{seconde}";
             bool exist = false;
             foreach (string s in lstHourly.Items)
@@ -108,6 +108,27 @@ namespace Nancy_bus_SAE
         private void AddLine_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmdValidate_Click(object sender, EventArgs e)
+        {
+            string tmp;
+            int nbLigne = BD.getNbLigne()+1;
+
+            BD.addLine(nbLigne, lblLine.Text.Substring(6), BD.getNumArret(cboStop.Text));
+            foreach (string s in lstHourly.Items)
+            {
+                tmp = s.Replace(":", "");
+                BD.addHoraireDepart(nbLigne, tmp);
+            }
+
+            //unhide Home (pas copiloté, stackoverflow)
+            var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+            this.Close();
         }
     }
 }

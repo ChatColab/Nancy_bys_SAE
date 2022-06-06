@@ -144,6 +144,22 @@ namespace LibraryDB
             return res;
         }
 
+        public static void addLine(int nLigne, string nomLigne, int nArretDepart)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"insert into Ligne values ({nLigne}, '{nomLigne}', {nArretDepart});";
+            cmd.ExecuteNonQuery();
+        }
+
+        public static void addHoraireDepart(int nLigne, string horaireDepart)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"insert into HoraireDepart values ({nLigne}, '{horaireDepart}');";
+            cmd.ExecuteNonQuery();
+        }
+
         public static int getNumArret(string nomArret)
         {
             int res = -1;

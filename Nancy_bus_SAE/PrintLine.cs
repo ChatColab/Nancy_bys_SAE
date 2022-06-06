@@ -49,6 +49,7 @@ namespace Nancy_bus_SAE
             //taille des colonnes
             lstStop.Columns[0].Width = -1;
             lstStop.Columns[1].Width = -1;
+            lstStop.Columns[2].Width = -2;
         }
 
         private void cmdQuit_Click(object sender, EventArgs e)
