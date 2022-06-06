@@ -39,16 +39,17 @@
             // 
             this.cboLine.FormattingEnabled = true;
             this.cboLine.Location = new System.Drawing.Point(14, 31);
-            this.cboLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboLine.Margin = new System.Windows.Forms.Padding(2);
             this.cboLine.Name = "cboLine";
             this.cboLine.Size = new System.Drawing.Size(193, 21);
             this.cboLine.TabIndex = 0;
+            this.cboLine.SelectedIndexChanged += new System.EventHandler(this.cboLine_SelectedIndexChanged);
             // 
             // chkDelRef
             // 
             this.chkDelRef.AutoSize = true;
             this.chkDelRef.Location = new System.Drawing.Point(14, 66);
-            this.chkDelRef.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDelRef.Margin = new System.Windows.Forms.Padding(2);
             this.chkDelRef.Name = "chkDelRef";
             this.chkDelRef.Size = new System.Drawing.Size(174, 17);
             this.chkDelRef.TabIndex = 1;
@@ -59,25 +60,27 @@
             // 
             this.cboStop.FormattingEnabled = true;
             this.cboStop.Location = new System.Drawing.Point(14, 122);
-            this.cboStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboStop.Margin = new System.Windows.Forms.Padding(2);
             this.cboStop.Name = "cboStop";
             this.cboStop.Size = new System.Drawing.Size(193, 21);
             this.cboStop.TabIndex = 2;
+            this.cboStop.SelectedIndexChanged += new System.EventHandler(this.cboStop_SelectedIndexChanged);
             // 
             // cmdDel
             // 
             this.cmdDel.Location = new System.Drawing.Point(14, 190);
-            this.cmdDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDel.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDel.Name = "cmdDel";
             this.cmdDel.Size = new System.Drawing.Size(191, 27);
             this.cmdDel.TabIndex = 3;
             this.cmdDel.Text = "Supprimer";
             this.cmdDel.UseVisualStyleBackColor = true;
+            this.cmdDel.Click += new System.EventHandler(this.cmdDel_Click);
             // 
             // cmdCancel
             // 
             this.cmdCancel.Location = new System.Drawing.Point(14, 234);
-            this.cmdCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdCancel.Margin = new System.Windows.Forms.Padding(2);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(191, 27);
             this.cmdCancel.TabIndex = 4;
@@ -95,7 +98,7 @@
             this.Controls.Add(this.cboStop);
             this.Controls.Add(this.chkDelRef);
             this.Controls.Add(this.cboLine);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DelStop";
             this.Text = "Supprimer Arrêt";
             this.ResumeLayout(false);

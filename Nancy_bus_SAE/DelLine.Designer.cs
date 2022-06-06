@@ -41,6 +41,7 @@
             this.cboLine.Name = "cboLine";
             this.cboLine.Size = new System.Drawing.Size(209, 21);
             this.cboLine.TabIndex = 0;
+            this.cboLine.SelectedIndexChanged += new System.EventHandler(this.cboLine_SelectedIndexChanged);
             // 
             // cmdDel
             // 

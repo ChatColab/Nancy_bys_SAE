@@ -22,6 +22,7 @@ namespace Nancy_bus_SAE
             {
                 cboLine.Items.Add("Ligne " + s);
             }
+            cmdDel.Enabled = false;
         }
 
         private void cmdQuit_Click(object sender, EventArgs e)
@@ -38,6 +39,11 @@ namespace Nancy_bus_SAE
         private void cmdDel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmdDel.Enabled = true;
         }
     }
 }
