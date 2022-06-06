@@ -31,6 +31,7 @@
             this.cboLine = new System.Windows.Forms.ComboBox();
             this.cmdDel = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cboLine
@@ -63,17 +64,28 @@
             this.cmdQuit.UseVisualStyleBackColor = true;
             this.cmdQuit.Click += new System.EventHandler(this.cmdQuit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(106, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Sélectionner une ligne";
+            // 
             // DelLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 422);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdDel);
             this.Controls.Add(this.cboLine);
             this.Name = "DelLine";
             this.Text = "Supprimer une Ligne";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +94,6 @@
         private System.Windows.Forms.ComboBox cboLine;
         private System.Windows.Forms.Button cmdDel;
         private System.Windows.Forms.Button cmdQuit;
+        private System.Windows.Forms.Label label1;
     }
 }

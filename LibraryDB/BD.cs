@@ -182,7 +182,7 @@ namespace LibraryDB
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
-            cmd.CommandText = $"select intervalleTemps from TempsTrajet set intervalleTemps = {inter} where nArretA = {nArret1} and nArretB = {nArret2};";
+            cmd.CommandText = $"select intervalleTemps from TempsTrajet where nArretA = {nArret1} and nArretB = {nArret2};";
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -257,7 +257,7 @@ namespace LibraryDB
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
             // pas bonne requete chien de merde
-            cmd.CommandText = $"select nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where nLigne = {nArret} and Arret1.nArret=TempsTrajet.nArretA and Arret2.nArret=TempsTrajet.nArretB and TempsTrajet.nArretA = {nArret};";
+            cmd.CommandText = $"select Arret1.nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where Arret2.nArret = {nArret} and Arret2.nArret = TempsTrajet.nArretB and Arret1.nArret = TempsTrajet.nArretA; ";
             dr = cmd.ExecuteReader();
             List<string> res = new List<string>();
             while (dr.Read())
@@ -268,7 +268,7 @@ namespace LibraryDB
             MySqlDataReader dr2;
             cmd = new MySqlCommand();
             cmd.Connection = cnx;
-            cmd.CommandText = $"select nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where nLigne = {nArret} and Arret1.nArret=TempsTrajet.nArretA and Arret2.nArret=TempsTrajet.nArretB and TempsTrajet.nArretB = {nArret};";
+            cmd.CommandText = $"select Arret2.nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where Arret1.nArret = {nArret} and Arret1.nArret = TempsTrajet.nArretA and Arret2.nArret = TempsTrajet.nArretB;";
             dr2 = cmd.ExecuteReader();
             while (dr2.Read())
             {
@@ -295,6 +295,22 @@ namespace LibraryDB
             test = test.Distinct().ToList();
             dr.Close();
             return test;
+        }
+        
+        public static string getNomArret(int nArret)
+        {
+            MySqlDataReader dr;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = cnx;
+            cmd.CommandText = $"select nomArret from Arret where nArret = {nArret};";
+            dr = cmd.ExecuteReader();
+            string res = "";
+            while (dr.Read())
+            {
+                res = dr.GetString(0);
+            }
+            dr.Close();
+            return res;
         }
 
         public static List<String> getNomArret(string nomLigne)

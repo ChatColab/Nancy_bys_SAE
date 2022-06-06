@@ -131,7 +131,6 @@
             this.cboStop.Name = "cboStop";
             this.cboStop.Size = new System.Drawing.Size(121, 28);
             this.cboStop.TabIndex = 10;
-            this.cboStop.Text = "Arrêt X";
             this.cboStop.SelectedIndexChanged += new System.EventHandler(this.cboStop_SelectedIndexChanged);
             // 
             // nudHours

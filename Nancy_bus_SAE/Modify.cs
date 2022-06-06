@@ -98,6 +98,12 @@ namespace Nancy_bus_SAE
         private void cmdSave_Click(object sender, EventArgs e)
         {
             BD.alterIntervalle(BD.getNumArret(cboFirstStopInput.Text), BD.getNumArret(cboNextStopInput.Text), (int)nudNewValue.Value);
+            var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+            this.Close();
         }
     }
 }

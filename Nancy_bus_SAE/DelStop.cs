@@ -51,10 +51,12 @@ namespace Nancy_bus_SAE
             }
             cboStop.Enabled = true;
         }
-
+     
         private void cmdDel_Click(object sender, EventArgs e)
         {
-
+            DelStopX form = new DelStopX(BD.getNumLigne(cboLine.Text), BD.getNumArret(cboStop.Text));
+            form.ShowDialog();
+            this.Close();
         }
 
         private void cboStop_SelectedIndexChanged(object sender, EventArgs e)
