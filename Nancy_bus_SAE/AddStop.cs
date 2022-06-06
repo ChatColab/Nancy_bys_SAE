@@ -49,7 +49,7 @@ namespace Nancy_bus_SAE
             }
 
         }
-
+        //modifie les arrets précedents et suivant disponibles en fonction du choix de la ligne
         private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboStop.Enabled = true;
@@ -69,7 +69,7 @@ namespace Nancy_bus_SAE
             }
             cboNextStop.Items.Add("Aucun (fin de ligne)");
         }
-
+        //après avoir sélectionné la ligne active les autres éléments
         private void cboStop_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -80,7 +80,7 @@ namespace Nancy_bus_SAE
             lblNextStop.Enabled = true;
             lblPrevStop.Enabled = true;
 
-
+            //si nouvel arrêts permet de rentrer son nom
             if (cboStop.Text == "Nouvel Arrêt")
             {
                 txtNewStop.Enabled = true;
@@ -95,7 +95,7 @@ namespace Nancy_bus_SAE
 
         private void cmdQuit_Click(object sender, EventArgs e)
         {
-            //unhide Home (pas copiloté, stackoverflow)
+            //revenir à l'acceuil sans sauvegarder
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {

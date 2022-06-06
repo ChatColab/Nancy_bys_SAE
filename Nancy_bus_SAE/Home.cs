@@ -36,40 +36,47 @@ namespace Nancy_bus_SAE
 
         }
 
+        //gère les boutons radios 
         private void optAddStop_Click(object sender, EventArgs e)
         {
             optAddLine.Checked = false;
             optAddStop.Checked = true;
         }
-
+        
+        //gère les boutons radios 
         private void optAddLine_Click(object sender, EventArgs e)
         {
             optAddLine.Checked = true;
             optAddStop.Checked = false;
         }
 
+        //gère les boutons radios 
         private void optDeleteLine_Click(object sender, EventArgs e)
         {
             optDeleteLine.Checked = true;
             optDeleteStop.Checked = false;
         }
 
+        //gère les boutons radios 
         private void optDeleteStop_Click(object sender, EventArgs e)
         {
             optDeleteLine.Checked = false;
             optDeleteStop.Checked = true;
         }
 
+        //ouvre le formulaire permettant l'ajout 
         private void cmdAdd_Click(object sender, EventArgs e)
         {
             //hide active form
             this.Hide();
-            //open new form
+            
+            //d'une ligne 
             if (optAddLine.Checked)
             {
                 AddLine addLine = new AddLine();
                 addLine.ShowDialog();
             }
+            //d'un arret
             else if (optAddStop.Checked)
             {
                 AddStop addStop = new AddStop();
@@ -77,16 +84,19 @@ namespace Nancy_bus_SAE
             }
         }
 
+        //ouvre le formulaire permettant la suppression
         private void cmdDelete_Click(object sender, EventArgs e)
         {
             //hide active form
             this.Hide();
-            //open new form
+            
+            //d'une ligne
             if (optDeleteLine.Checked)
             {
                 DelLine deleteLine = new DelLine();
                 deleteLine.ShowDialog();
             }
+            //d'un arrêt
             else if (optDeleteStop.Checked)
             {
                 DelStop deleteStop = new DelStop();
@@ -94,6 +104,7 @@ namespace Nancy_bus_SAE
             }
         }
 
+        //ouvre le formulaire permettant la modification des horaires 
         private void cmdModify_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -101,9 +112,9 @@ namespace Nancy_bus_SAE
             modify.ShowDialog();
         }
 
+        //appeler le form avec le numéro de ligne correspondant (requête sql)
         private void cmdPrint_Click(object sender, EventArgs e)
         {
-            //appeler le form avec le numéro de ligne correspondant (requête sql)
             this.Hide();
             string ligne = lstLine.SelectedItem.ToString();
             
@@ -111,9 +122,9 @@ namespace Nancy_bus_SAE
             print.ShowDialog();
         }
 
+        //refresh de la listbox a chaque fois que home apparait
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
-            //refresh de la listbox a chaque fois que home apparait
             bool a = false;
             bool b = false;
             List<String> fill;

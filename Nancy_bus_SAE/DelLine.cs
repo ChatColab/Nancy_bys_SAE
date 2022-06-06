@@ -27,7 +27,7 @@ namespace Nancy_bus_SAE
 
         private void cmdQuit_Click(object sender, EventArgs e)
         {
-            //unhide Home (pas copiloté, stackoverflow)
+            //retourne à l'acceuil sans sauvegarder
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {
@@ -35,11 +35,11 @@ namespace Nancy_bus_SAE
             }
             this.Close();
         }
-
+        //suppirme la ligne de la BD et retourne à l'acceuil
         private void cmdDel_Click(object sender, EventArgs e)
         {
             BD.delLine(BD.getNumLigne(cboLine.Text.Substring(6)));
-            //unhide Home (pas copiloté, stackoverflow)
+            //unhide Home
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {
@@ -48,6 +48,7 @@ namespace Nancy_bus_SAE
             this.Close();
         }
 
+        //quand une ligne est sélectionnée permet la suppression
         private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmdDel.Enabled = true;

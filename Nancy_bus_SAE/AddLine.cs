@@ -29,10 +29,10 @@ namespace Nancy_bus_SAE
                 cboStop.Items.Add(s);
             }
         }
-
+        //au click, quitte sans sauvegarder les changements
         private void cmdQuit_Click(object sender, EventArgs e)
         {
-            //unhide Home (pas copiloté, stackoverflow)
+            //unhide Home
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {
@@ -41,7 +41,7 @@ namespace Nancy_bus_SAE
             this.Close();
         }
 
-
+        //ajoute l'horaire choisie, au tableau des horaires du nouvel arret créé 
         private void cmdAdd_Click(object sender, EventArgs e)
         {
             string heure = nudHours.Value.ToString("00");
@@ -61,6 +61,7 @@ namespace Nancy_bus_SAE
             cmdValidate.Enabled = true;
         }
 
+        //gère le choix de l'heure avec le NUD (empêchant tout dépassement)
         private void nudHours_ValueChanged(object sender, EventArgs e)
         {
             if (nudHours.Value > 23)
@@ -72,7 +73,7 @@ namespace Nancy_bus_SAE
                 nudHours.Value = 0;
             }
         }
-
+        //gère le choix des minutes avec le NUD (empêchant tout dépassement)
         private void nudMinutes_ValueChanged(object sender, EventArgs e)
         {
             if (nudMinutes.Value > 59)
@@ -84,7 +85,7 @@ namespace Nancy_bus_SAE
                 nudMinutes.Value = 0;
             }
         }
-
+        //gère le choix des secondes avec le NUD (empêchant tout dépassement)
         private void nudSeconds_ValueChanged(object sender, EventArgs e)
         {
             if (nudSeconds.Value > 59)
@@ -97,6 +98,7 @@ namespace Nancy_bus_SAE
             }
         }
 
+        //une fois l'arrêt choisi active les autres éléments
         private void cboStop_SelectedIndexChanged(object sender, EventArgs e)
         {
             nudHours.Enabled = true;
@@ -110,6 +112,7 @@ namespace Nancy_bus_SAE
 
         }
 
+        //créé la nouvelle ligne dans la base de donnée en fonction de tout les paramètres choisis et revient à l'accueil
         private void cmdValidate_Click(object sender, EventArgs e)
         {
             string tmp;

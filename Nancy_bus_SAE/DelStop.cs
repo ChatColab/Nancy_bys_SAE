@@ -27,9 +27,9 @@ namespace Nancy_bus_SAE
             cmdDel.Enabled = false;
         }
 
+        //retorurne à l'accueil sans sauvegarder
         private void cmdCancel_Click(object sender, EventArgs e)
         {
-            //unhide Home (pas copiloté, stackoverflow)
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {
@@ -38,10 +38,10 @@ namespace Nancy_bus_SAE
             this.Close();
         }
 
+        //modifie les arrêts pouvant être supprimé en fonction de la ligne choisie
         private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
         {
             string nomLine = cboLine.Text.Substring(6); 
-            Console.WriteLine(nomLine);
             List<string> fill2 = new List<string>();
             fill2 = BD.getNomArret(nomLine);
             foreach (string s in fill2)

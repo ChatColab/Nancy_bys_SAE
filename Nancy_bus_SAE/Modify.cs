@@ -28,8 +28,6 @@ namespace Nancy_bus_SAE
             {
                 cboFirstStopInput.Items.Add(s);
             }
-
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -37,9 +35,10 @@ namespace Nancy_bus_SAE
 
         }
 
+        //retourne à l'acceuil sans sauvegarder
         private void cmdQuit_Click(object sender, EventArgs e)
         {
-            //unhide Home (pas copiloté, stackoverflow)
+            
             var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
             if (formToShow != null)
             {
@@ -48,6 +47,7 @@ namespace Nancy_bus_SAE
             this.Close();
         }
 
+        //modifie l'arret suivant en fonction de l'arret précédant choisi
         private void cboFirstStopInput_SelectedIndexChanged(object sender, EventArgs e)
         {
             {
@@ -70,6 +70,7 @@ namespace Nancy_bus_SAE
             lblNextStop.Text = cboNextStopInput.Text;
             cmdValidate.Enabled = true;
         }
+
 
         private void cmdValidate_Click(object sender, EventArgs e)
         {
