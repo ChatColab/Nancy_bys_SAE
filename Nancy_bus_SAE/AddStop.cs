@@ -40,7 +40,7 @@ namespace Nancy_bus_SAE
 
             
             List<string> fill2 = new List<string>();
-            fill = BD.getNomArret();
+            fill2 = BD.getNomArret();
 
             cboStop.Items.Add("Nouvel Arrêt");
             foreach (string s in fill2)
@@ -86,54 +86,11 @@ namespace Nancy_bus_SAE
                 txtNewStop.Enabled = true;
                 lblNewStop.Enabled = true;
             }
-            
-            //le code ci-dessous est est copiloté (pas forcemment bon)
-            /*
-            if (cboStop.Text == "Nouvel Arrêt")
-            {
-                txtNewStop.Enabled = true;
-                lblNewStop.Enabled = true;
-                lblNextStop.Enabled = false;
-                lblPrevStop.Enabled = false;
-                cmdAdd.Enabled = true;
-            }
             else
             {
-                List<string> fill = new List<string>();
-                fill = BD.getArret(cboLine.Text.Substring(6));
-                int i = 0;
-                foreach (string s in fill)
-                {
-                    if (s == cboStop.Text)
-                    {
-                        if (i == 0)
-                        {
-                            lblPrevStop.Enabled = false;
-                            cboPrevStop.Enabled = false;
-                        }
-                        else
-                        {
-                            lblPrevStop.Enabled = true;
-                            cboPrevStop.Enabled = true;
-                            cboPrevStop.Text = fill[i - 1];
-                        }
-                        if (i == fill.Count - 1)
-                        {
-                            lblNextStop.Enabled = false;
-                            cboNextStop.Enabled = false;
-                        }
-                        else
-                        {
-                            lblNextStop.Enabled = true;
-                            cboNextStop.Enabled = true;
-                            cboNextStop.Text = fill[i + 1];
-                        }
-                    }
-                    i++;
-                }
-                cmdAdd.Enabled = true;
+                txtNewStop.Enabled = false;
+                lblNewStop.Enabled = false;
             }
-            */
         }
 
         private void cmdQuit_Click(object sender, EventArgs e)

@@ -104,5 +104,10 @@ namespace Nancy_bus_SAE
             nudSeconds.Enabled = true;
             cmdAdd.Enabled = true;
         }
+
+        private void AddLine_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

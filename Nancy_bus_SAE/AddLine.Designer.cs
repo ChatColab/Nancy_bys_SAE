@@ -215,6 +215,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddLine";
             this.Text = "Ajouter une ligne";
+            this.Load += new System.EventHandler(this.AddLine_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSeconds)).EndInit();
