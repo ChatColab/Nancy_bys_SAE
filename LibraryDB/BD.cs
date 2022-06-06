@@ -20,10 +20,10 @@ namespace LibraryDB
             String passwd = "mdp";
             String BDD = "basec2";
             */
-            String server = "";
-            String login = "";
-            String passwd = "";
-            String BDD = "";
+            String server = "127.0.0.1";
+            String login = "root";
+            String passwd = "password";
+            String BDD = "test";
             string connexion = $"SERVER={server};DATABASE={BDD};UID={login};PASSWORD={passwd};";
 
             cnx = new MySqlConnection(connexion);
@@ -166,6 +166,7 @@ namespace LibraryDB
             MySqlDataReader dr;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = cnx;
+            // pas bonne requete chien de merde
             cmd.CommandText = $"select nomArret from TempsTrajet, Arret as Arret1, Arret as Arret2 where nLigne = {nArret} and Arret1.nArret=TempsTrajet.nArretA and Arret2.nArret=TempsTrajet.nArretB and TempsTrajet.nArretA = {nArret};";
             dr = cmd.ExecuteReader();
             List<string> res = new List<string>();

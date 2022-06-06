@@ -37,7 +37,15 @@
             this.cmdValidate = new System.Windows.Forms.Button();
             this.cmdQuit = new System.Windows.Forms.Button();
             this.cboStop = new System.Windows.Forms.ComboBox();
-            this.txtStartHourly = new System.Windows.Forms.TextBox();
+            this.nudHours = new System.Windows.Forms.NumericUpDown();
+            this.nudMinutes = new System.Windows.Forms.NumericUpDown();
+            this.nudSeconds = new System.Windows.Forms.NumericUpDown();
+            this.lblHours = new System.Windows.Forms.Label();
+            this.lblSeconds = new System.Windows.Forms.Label();
+            this.lblMinutes = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeconds)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLine
@@ -64,7 +72,7 @@
             // lblNewStartHourly
             // 
             this.lblNewStartHourly.AutoSize = true;
-            this.lblNewStartHourly.Location = new System.Drawing.Point(24, 179);
+            this.lblNewStartHourly.Location = new System.Drawing.Point(24, 170);
             this.lblNewStartHourly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNewStartHourly.Name = "lblNewStartHourly";
             this.lblNewStartHourly.Size = new System.Drawing.Size(126, 13);
@@ -131,21 +139,70 @@
             this.cboStop.Size = new System.Drawing.Size(82, 21);
             this.cboStop.TabIndex = 10;
             this.cboStop.Text = "Arrêt X";
+            this.cboStop.SelectedIndexChanged += new System.EventHandler(this.cboStop_SelectedIndexChanged);
             // 
-            // txtStartHourly
+            // nudHours
             // 
-            this.txtStartHourly.Location = new System.Drawing.Point(27, 212);
-            this.txtStartHourly.Name = "txtStartHourly";
-            this.txtStartHourly.Size = new System.Drawing.Size(120, 20);
-            this.txtStartHourly.TabIndex = 11;
-            this.txtStartHourly.TextChanged += new System.EventHandler(this.txtStartHourly_TextChanged);
+            this.nudHours.Location = new System.Drawing.Point(27, 213);
+            this.nudHours.Name = "nudHours";
+            this.nudHours.Size = new System.Drawing.Size(37, 20);
+            this.nudHours.TabIndex = 12;
+            this.nudHours.ValueChanged += new System.EventHandler(this.nudHours_ValueChanged);
+            // 
+            // nudMinutes
+            // 
+            this.nudMinutes.Location = new System.Drawing.Point(70, 213);
+            this.nudMinutes.Name = "nudMinutes";
+            this.nudMinutes.Size = new System.Drawing.Size(37, 20);
+            this.nudMinutes.TabIndex = 13;
+            this.nudMinutes.ValueChanged += new System.EventHandler(this.nudMinutes_ValueChanged);
+            // 
+            // nudSeconds
+            // 
+            this.nudSeconds.Location = new System.Drawing.Point(113, 213);
+            this.nudSeconds.Name = "nudSeconds";
+            this.nudSeconds.Size = new System.Drawing.Size(37, 20);
+            this.nudSeconds.TabIndex = 14;
+            this.nudSeconds.ValueChanged += new System.EventHandler(this.nudSeconds_ValueChanged);
+            // 
+            // lblHours
+            // 
+            this.lblHours.AutoSize = true;
+            this.lblHours.Location = new System.Drawing.Point(28, 197);
+            this.lblHours.Name = "lblHours";
+            this.lblHours.Size = new System.Drawing.Size(36, 13);
+            this.lblHours.TabIndex = 15;
+            this.lblHours.Text = "Heure";
+            // 
+            // lblSeconds
+            // 
+            this.lblSeconds.AutoSize = true;
+            this.lblSeconds.Location = new System.Drawing.Point(110, 197);
+            this.lblSeconds.Name = "lblSeconds";
+            this.lblSeconds.Size = new System.Drawing.Size(50, 13);
+            this.lblSeconds.TabIndex = 16;
+            this.lblSeconds.Text = "Seconde";
+            // 
+            // lblMinutes
+            // 
+            this.lblMinutes.AutoSize = true;
+            this.lblMinutes.Location = new System.Drawing.Point(66, 197);
+            this.lblMinutes.Name = "lblMinutes";
+            this.lblMinutes.Size = new System.Drawing.Size(39, 13);
+            this.lblMinutes.TabIndex = 17;
+            this.lblMinutes.Text = "Minute";
             // 
             // AddLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 292);
-            this.Controls.Add(this.txtStartHourly);
+            this.Controls.Add(this.lblMinutes);
+            this.Controls.Add(this.lblSeconds);
+            this.Controls.Add(this.lblHours);
+            this.Controls.Add(this.nudSeconds);
+            this.Controls.Add(this.nudMinutes);
+            this.Controls.Add(this.nudHours);
             this.Controls.Add(this.cboStop);
             this.Controls.Add(this.cmdQuit);
             this.Controls.Add(this.cmdValidate);
@@ -158,6 +215,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddLine";
             this.Text = "Ajouter une ligne";
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeconds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,6 +234,11 @@
         private System.Windows.Forms.Button cmdValidate;
         private System.Windows.Forms.Button cmdQuit;
         private System.Windows.Forms.ComboBox cboStop;
-        private System.Windows.Forms.TextBox txtStartHourly;
+        private System.Windows.Forms.NumericUpDown nudHours;
+        private System.Windows.Forms.NumericUpDown nudMinutes;
+        private System.Windows.Forms.NumericUpDown nudSeconds;
+        private System.Windows.Forms.Label lblHours;
+        private System.Windows.Forms.Label lblSeconds;
+        private System.Windows.Forms.Label lblMinutes;
     }
 }

@@ -16,7 +16,12 @@ namespace Nancy_bus_SAE
         public AddLine()
         {
             InitializeComponent();
-            
+
+            nudHours.Enabled = false;
+            nudMinutes.Enabled = false;
+            nudSeconds.Enabled = false;
+            cmdAdd.Enabled = false;
+            cmdValidate.Enabled = false;
             lblLine.Text = "Ligne " + ((Convert.ToInt32(BD.getNomLigne(BD.getNbLigne())))+1).ToString();
 
             foreach (String s in BD.getNomArret())
@@ -36,34 +41,68 @@ namespace Nancy_bus_SAE
             this.Close();
         }
 
-        private void txtStartHourly_TextChanged(object sender, EventArgs e)
-        {
-          if (txtStartHourly.Text != "Format Invalide")
-            {
-                //set default forecolor
-                txtStartHourly.ForeColor = Color.Grey;
-            }
-        }
 
         private void cmdAdd_Click(object sender, EventArgs e)
         {
-            /*
-            string txt = txtStartHourly.Text;
-            string pattern = @"\d\d:\d\d:\d\d";
-            Match m = Regex.Match(txt, pattern);
-            if (m.Success && Convert.ToInt32(txt.Substring())<24 && )
+            int heure = (int)nudHours.Value;
+            int minute = (int)nudMinutes.Value;
+            int seconde = (int)nudSeconds.Value;
+            string time = $"{heure}:{minute}:{seconde}";
+            bool exist = false;
+            foreach (string s in lstHourly.Items)
             {
-
-                //requête sql
+                if (s == time)
+                    exist = true;
             }
-            else
+
+            if (!exist) {
+                lstHourly.Items.Add(time);
+            }
+            cmdValidate.Enabled = true;
+        }
+
+        private void nudHours_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudHours.Value > 23)
             {
-                txtStartHourly.ForeColor = Color.Red;
-                txtStartHourly.Text = "Format Invalide";
+                nudHours.Value = 23;
             }
-            */
+            if (nudHours.Value < 0)
+            {
+                nudHours.Value = 0;
+            }
+        }
 
-            //ok gaetour oublie le truc du haut on va remplacer la text box par deux numeric up down un pour les heures un pour les minutes et on fait en sorte que le premier dépasse pas 24 et l autre 60 comme ça on est tranquile et nique bien mais alors EXTREMEMENT fort l'entrée utilisateur c des gros chiens les utilisateurs
+        private void nudMinutes_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudMinutes.Value > 59)
+            {
+                nudMinutes.Value = 59;
+            }
+            if (nudMinutes.Value < 0)
+            {
+                nudMinutes.Value = 0;
+            }
+        }
+
+        private void nudSeconds_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudSeconds.Value > 59)
+            {
+                nudSeconds.Value = 59;
+            }
+            if (nudSeconds.Value < 0)
+            {
+                nudSeconds.Value = 0;
+            }
+        }
+
+        private void cboStop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudHours.Enabled = true;
+            nudMinutes.Enabled = true;
+            nudSeconds.Enabled = true;
+            cmdAdd.Enabled = true;
         }
     }
 }

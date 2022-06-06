@@ -81,7 +81,7 @@
             this.lstStop.Location = new System.Drawing.Point(43, 98);
             this.lstStop.Margin = new System.Windows.Forms.Padding(2);
             this.lstStop.Name = "lstStop";
-            this.lstStop.Size = new System.Drawing.Size(251, 180);
+            this.lstStop.Size = new System.Drawing.Size(260, 180);
             this.lstStop.TabIndex = 5;
             this.lstStop.UseCompatibleStateImageBehavior = false;
             // 

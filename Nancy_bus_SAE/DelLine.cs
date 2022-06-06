@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryDB;
 
 namespace Nancy_bus_SAE
 {
@@ -15,6 +16,12 @@ namespace Nancy_bus_SAE
         public DelLine()
         {
             InitializeComponent();
+            List<string> fill = new List<string>();
+            fill = BD.getNomLigne();
+            foreach (string s in fill)
+            {
+                cboLine.Items.Add("Ligne " + s);
+            }
         }
 
         private void cmdQuit_Click(object sender, EventArgs e)
@@ -26,6 +33,11 @@ namespace Nancy_bus_SAE
                 formToShow.Show();
             }
             this.Close();
+        }
+
+        private void cmdDel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
