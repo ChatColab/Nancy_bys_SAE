@@ -118,8 +118,9 @@ namespace Nancy_bus_SAE
         //refresh de la listbox a chaque fois que home apparait
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
+            
             List<string> tmp = new List<string>();
-            List<String> fill = new List<String>();
+            List<string> fill = new List<string>();
             fill = BD.getNomLigne();
             foreach (string d in lstLine.Items)
             {
@@ -133,6 +134,7 @@ namespace Nancy_bus_SAE
                 lstLine.Items.Add("Ligne " + s);
             }
             lstLine.Sorted = true;
+            
 
         }
     }
