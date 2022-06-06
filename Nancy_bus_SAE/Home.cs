@@ -113,6 +113,7 @@ namespace Nancy_bus_SAE
 
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
+            //refresh de la listbox a chaque fois que home apparait
             bool a = false;
             bool b = false;
             List<String> fill;

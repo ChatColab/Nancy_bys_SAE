@@ -176,6 +176,20 @@ namespace LibraryDB
             return res;
         }
 
+        public static void delLine(int nLigne)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = cnx;
+                cmd.CommandText = $"delete from Ligne where nLigne = {nLigne};";
+                cmd.ExecuteNonQuery();
+            }catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
         public static List<string> getNomArretLink(string nomArret)
         {
             int nArret = getNumArret(nomArret);

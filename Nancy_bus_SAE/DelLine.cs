@@ -38,7 +38,14 @@ namespace Nancy_bus_SAE
 
         private void cmdDel_Click(object sender, EventArgs e)
         {
-
+            BD.delLine(BD.getNumLigne(cboLine.Text.Substring(6)));
+            //unhide Home (pas copiloté, stackoverflow)
+            var formToShow = Application.OpenForms.Cast<Form>().FirstOrDefault(c => c is Home);
+            if (formToShow != null)
+            {
+                formToShow.Show();
+            }
+            this.Close();
         }
 
         private void cboLine_SelectedIndexChanged(object sender, EventArgs e)
