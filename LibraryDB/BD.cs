@@ -14,16 +14,12 @@ namespace LibraryDB
 
         public static void initConnexion()
         {
-            /*
+            
             String server = "10.1.139.236";
             String login = "c2";
             String passwd = "mdp";
             String BDD = "basec2";
-            */
-            String server = "127.0.0.1";
-            String login = "root";
-            String passwd = "password";
-            String BDD = "test";
+            
             string connexion = $"SERVER={server};DATABASE={BDD};UID={login};PASSWORD={passwd};";
 
             cnx = new MySqlConnection(connexion);
