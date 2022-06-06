@@ -119,46 +119,22 @@ namespace Nancy_bus_SAE
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
             
-            bool a = false;
-            bool b = false;
-            List<String> fill;
+            List<string> tmp = new List<string>();
+            List<string> fill = new List<string>();
             fill = BD.getNomLigne();
-            foreach (string s in fill)
-            {
-                foreach (string d in lstLine.Items)
-                {
-                    if (s == d.Substring(6))
-                    {
-                        a = true;
-                    }
-                }
-                if (!a)
-                {
-                    lstLine.Items.Add("Ligne " + s);
-                }
-                a = false;
-            }
-
-            List<string> fill2 = new List<string>();
             foreach (string d in lstLine.Items)
             {
-                foreach (string s in fill)
-                {
-                    if (s == d.Substring(6))
-                    {
-                        b = true;
-                    }
-                }
-                if (!b)
-                {
-                    fill2.Add(d);
-                }
-                b = false;
+                tmp.Add(d);
             }
-            foreach (string s in fill2)
+            foreach (string d in tmp) {
+                lstLine.Items.Remove(d);
+            }
+            foreach (string s in fill)
             {
-                lstLine.Items.Remove(s);
+                lstLine.Items.Add("Ligne " + s);
             }
+            lstLine.Sorted = true;
+            
 
         }
     }
